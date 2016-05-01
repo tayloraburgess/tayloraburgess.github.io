@@ -2,4 +2,4 @@
 
 ## Hi.
 
-This is (or will be) a blog.
+This is a simple blog built with Jekyll.
