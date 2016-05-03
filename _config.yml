@@ -1,7 +1,7 @@
 # Harmony Jekyll theme general configurations 
 
 # Base URL
-//baseurl: /harmony
+ # baseurl: /harmony
 
 # Site live URL
 url: http://tayloraburgess.github.io
@@ -17,9 +17,9 @@ harmony:
   # It will appear in your document head meta (for Google search results) and 
   # in your feed.xml site description.
   meta_description: > # 
-   Harmony is a free responsive jekyll theme by Gayan Virajith
-   and Maheshika Lakmali. Sourced on Github - 
-   https://github.com/gayanvirajith/harmony
+  # Harmony is a free responsive jekyll theme by Gayan Virajith
+  # and Maheshika Lakmali. Sourced on Github - 
+  # https://github.com/gayanvirajith/harmony
   basetheme: darken # pre defined thmes are darken, blue-water, redish.
   author: # Author details
     name: Taylor Burgess
