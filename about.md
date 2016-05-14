@@ -13,3 +13,4 @@ Maybe I'll add a photo soon if I'm feeling generous.
 Here's some other places you can find me:  
 [LinkedIn](https://www.linkedin.com/in/tayloraburgess)  
 [Twitter](https://twitter.com/tayloraburgess)
+[Email](mailto:tayloraburgess@gmail.com)
