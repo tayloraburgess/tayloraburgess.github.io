@@ -5,7 +5,8 @@ title: Blog Archive
 <div class="page-content wc-container">
   <h1>Blog Archive</h1>
   <h2>Tags</h2>
-  {% for tag in site.tags %}
+  {% assign sortedtags = site.tags | sort %}
+  {% for tag in sortedtags %}
     {% assign tagname = tag | first %}
       <h5>{{ tagname }}</h5>
       <ul>
