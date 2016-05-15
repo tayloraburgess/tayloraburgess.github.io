@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Blog archive
+title: Blog Archive
 ---
 <div class="page-content wc-container">
   <h1>Blog Archive</h1>
@@ -11,7 +11,7 @@ title: Blog archive
       <ul>
         {% for post in site.posts %}
           {% if post.tags contains tagname %}
-              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+              <li>{{ post.date | date: "%b %d, %Y" }} - <a href="{{ post.url }}">{{ post.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>
@@ -25,7 +25,6 @@ title: Blog archive
     	<ul class="posts">
     	{% capture year %}{{currentyear}}{% endcapture %} 
   	{% endif %}
-    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+    <li>{{ post.date | date: "%b %d" }} - <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
   {% endfor %}
-
 </div>
