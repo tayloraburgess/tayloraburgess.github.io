@@ -4,11 +4,13 @@ title: About
 permalink: /about/
 ---
 
-Hi!
+Hi! I'm Taylor.
 
-I'm Taylor. I write things (some fiction, some poetry--but mostly non-fiction thoughts here), record music, and as of recently make software (or, I'm at least learning to, bit by bit). This is a pretty standard-issue personal blog--about whatever I'm interested in at the moment--as well as a place to consolidate projects.
+I write things (some fiction, some poetry--but mostly non-fiction thoughts on this blog); write, record, and play music; and as of recently make software/program/code things (whichever expression [bothers you the least](https://www.quora.com/What-is-the-difference-between-programming-and-coding-4), I'll take). Or--at absolute minimum, I'm learning to do these things, bit by bit, and I'm loving the process.
 
-Maybe I'll add a photo soon if I'm feeling generous.
+This is a pretty standard-issue personal blog, covering whatever I'm interested in at the moment. I also use it to link to projects of various kinds that I've finished or am working on.
+
+Who knows--maybe I'll even add a photo here soon.
 
 Here's some other places you can find me:  
 [LinkedIn](https://www.linkedin.com/in/tayloraburgess)  
