@@ -14,3 +14,4 @@ If you hear anything interesting and want to discuss a project you'd like me to 
 [Element3](http://element3.org/music/) | Element3 | May 2014 | Engineering, Mixing, Mastering
 [Thorns](https://libbyoneill.bandcamp.com/album/thorns) | Libby O'Neill | January 2014 | Mixing, Mastering
 [Sartoris](http://presssounds.bandcamp.com/album/sartoris) | Press | September 2013 | Engineering, Mixing, Mastering, Guitar, Sequencing
+[The Stumble Sessions](https://ericcase.bandcamp.com/album/the-stumble-sessions) | Eric Case | September 2013 | Mixing
