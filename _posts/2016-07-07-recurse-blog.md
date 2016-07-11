@@ -7,7 +7,7 @@ From July 5-September 22, I’m spending time at the [Recurse Center](http://rec
 
 - I’ll add daily to this single post (static site etc), but if that approach seems clunky as I go, I’ll split it into individual posts.
 - Going to keep things relatively short, both so I actually write every day and to not get too technical—want to focus here for the most part on what I did broadly so that there’s some sense of an arc/narrative to my time at Recurse. It’s also entirely possible no such story will reveal itself at all.
-- I’ll also be using some first names and proper nouns that I may not always explain. In a normal blog post, I try to avoid that, but I’m writing these quickly and, frankly, for my own benefit. Maybe at the end I’ll go back and fill in some details—or write a glossary/add footnotes—but that’s not likely.
+- I’ll also be using some first names and proper nouns that I may not always explain. In normal blog posts, I try to avoid that kind of inside baseball, but I’m writing these quickly and, frankly, for my own benefit. Maybe at the end I’ll go back and fill in some details—or write a glossary/add footnotes—but that’s not likely.
 
 Anyway, here we go:
 
@@ -47,3 +47,21 @@ Stray thoughts:
 
 - Stayed late again (until ~12:30 AM), and again wasn’t terribly productive past a certain point, but had some good conversations. The feeling of the room changes after the official hours are over—people talk more freely, alumni come and go, etc.
 - I still can’t figure out exactly what it is, but something about the space is very soothing and so far has pushed me past the emotional cruft that I tend to have when I wake up and toward actual, enjoyable work. Might have something to do with the space being full of other people working—i.e. if I look up, I don’t really see distractions; I just see models for what I should actually be doing.
+
+#### 08-10 July
+
+Recurse is only officially open Monday-Thursday (or at least the expectation is for us to be in the space during the day then), so to cut myself some slack I’ll be covering my Fridays, Saturdays, and Sundays in one summary post. They’re technically my days off, but I’m going to try to keep ahead of projects anyway. Or, put another way, I can go in the Recurse space 24/7, and I’m already having a hard time truly taking even a day off (since my time at Recurse is so limited), so I’ll probably still have things to say in these posts.
+
+That said, not much productive activity this weekend, which I justified to myself since it’s my first real one here. I did spend most of Friday in the space, but to diminishing returns as the day wore on. I finished the Pascal interpreter tutorial and started restructuring the markdown interpreter, but (as I’m writing this on Sunday) the rest of the day starts to get a little hazy in my memory, so I can say semi-confidently that not much happened. John asked me to work in a group on a BitTorrent client, so I learned a little basic Python in preparation, and while out for lunch, Adrien suggested we try to pair on synthesizer in Javascript.
+
+Other than disccusing those project ideas, though, little work happened. I left the space around 9:30, went to a party full of RCers in midtown, and came home extremely late—and I think that’s okay. While there, had a very enthusiastic conversation with Irina about my idea to somehow redesign git for use with DAWs, but that might be well beyond my abilities at the moment. We’ll see.
+
+As for Saturday and Sunday, I didn’t write a single line of code (I’m opening my laptop for the first time since Friday afternoon, and it’s 10:30 PM on Sunday). And I think that’s also okay. I wandered around various city spots I’d wanted to see—Greenwich Village, the High Line, Williamsburg, etc—and tried to give myself time to process what, for me, has been a pretty neck-snapping life transition. I don’t mean that in a negative sense, necessarily—there’s just a lot of new people, places, ideas, patterns of life, and I’m trying to be kind to myself as I take it in.
+
+A common personal trap for me is believing I need to be much more accomplished at and much more adjusted to difficult things, like living in a new, huge city or programming effectively, than is realistic given the amount of time I’ve been exposed to them. I’ve only been at Recurse and in New York for one week, and when I step back from it and afford myself kindness, I’m pretty pleased with how I’ve been doing so far.
+
+Stray thoughts:
+
+- Interesting New York anecdote (that’s possibly common and thus only interesting to a city neophyte like me)—while near Washington Square Park on my way back to the apartment at 4:00 AM on Saturday morning, I saw someone, eyes closed, lying the middle of the street. His friends didn’t seem terribly concerned, and I was frankly a little too intoxicated to properly assess the situation.
+- As a Southerner accustomed to easy access to washers and dryers in every place I’ve lived, figuring out how to (affordably) do my laundry today was a bit of an ordeal. It was ultimately painless to suck it up and go to the one self-serve laundromat within walking distance (SoHo seems to favor drop-off services), but I spent far too much time beforehand researching it and freaking myself out. Not too flattering, but true. Need to get in the habit of just doing new tasks like that, and deciding afterward whether they’re difficult or not, rather than the way I went about it today.
+- On the way to the laundromat, I saw an (extremely minor) internet-famous person walking through SoHo, which isn’t actually interesting, I know, but was a little bit jarring. Having lived in smaller towns, I’m just not used to the sensation of unexpectedly seeing people IRL who, in this case, have written lots of things I’ve read.
