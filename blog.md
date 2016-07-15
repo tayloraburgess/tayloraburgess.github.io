@@ -28,4 +28,3 @@ title: Blog Archive
   	{% endif %}
     <li>{{ post.date | date: "%b %d" }} - <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
   {% endfor %}
-</div>

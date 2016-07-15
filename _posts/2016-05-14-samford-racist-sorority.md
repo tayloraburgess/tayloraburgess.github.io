@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Neil Young Was Probably Right
-tags: Personal
+tags: [Personal]
 ---
 I wasn’t planning to start this blog with something so personal—entries will be topical sometimes, of course, though not always this close to home—but bad things happened, I decided against posting something lengthy on social media, and here we are. Fair warning to you, dear reader, if this is a sensitive subject: information and opinions about a specific case of racism in the American south ahead. (I hope it goes without saying, but I will be doing the opposite of condoning said racism. Anyway.)
 
