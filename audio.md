@@ -3,9 +3,9 @@ layout: page
 title: Audio
 permalink: /audio/
 ---
-This is a short discography of completed audio recordings I've worked on. I'm hoping to take on new projects and grow this list. 
+This is a short discography of completed audio recordings I've worked on.
 
-If you hear anything interesting and want to discuss a project you'd like me to join in some capacity--which, if I've never met you, would frankly be a first for my audio work so far, but awesome--[get in touch](mailto:tayloraburgess@gmail.com).
+I'd love to take on new work, so you hear anything interesting and want to discuss a project, [get in touch](mailto:tayloraburgess@gmail.com).
 
 ##### Personal Work:
 

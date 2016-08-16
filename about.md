@@ -4,15 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Hi! I'm Taylor.
+Hi! I'm Taylor. ([Say hello.](mailto:tayloraburgess@gmail.com)) I'm currently based in New York, and I:
 
-I write words (some fiction, some poetry--but mostly non-fiction thoughts on this blog); write, record, and play music; and as of recently make software/program/code (whichever expression [bothers you the least](https://www.quora.com/What-is-the-difference-between-programming-and-coding-4), I'll take). Or, at minimum, I'm learning to do these things, bit by bit, and I'm loving the process.
+- [Write](/blog/) words (some fiction, some poetry--but mostly just blog here)
+- [Record](/audio/) and [play](http://presssounds.bandcamp.com/) music
+- [Program/code/make](https://github.com/tayloraburgess) software (whichever expression [bothers you the least](https://www.quora.com/What-is-the-difference-between-programming-and-coding-4), I'll take). 
 
-This is a pretty standard-issue personal blog, covering whatever I'm interested in at the moment. I also use it to link to projects of various kinds that I've finished or am working on.
+(At minimum, I'm learning to do these things, bit by bit, and I'm loving the process.)
 
-Who knows--maybe I'll even add a photo here soon.
-
-Here's some other places you can find me:  
-[LinkedIn](https://www.linkedin.com/in/tayloraburgess)  
-[Twitter](https://twitter.com/tayloraburgess)  
-[Email](mailto:tayloraburgess@gmail.com)
+I'm also part of the current batch at the [Recurse Center](https://www.recurse.com/). If you'd like to spend three months in NYC working with brilliant (and warm) programmers from around the world, consider applying.
