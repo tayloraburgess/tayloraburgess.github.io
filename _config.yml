@@ -6,30 +6,12 @@ url: http://tayloraburgess.github.io
 # Localhost 
 #url: http://127.0.0.1:4000  
 
+name: Taylor Burgess
+author: Taylor Burgess
+
 # Harmony theme configuration. Please change accordingly.
 harmony:
   name: Taylor Burgess
-  //description: Something.
-  # 'meta_description:' Write an awesome description for your new site here.
-  # It will appear in your document head meta (for Google search results) and 
-  # in your feed.xml site description.
-  meta_description: > # 
-  # Harmony is a free responsive jekyll theme by Gayan Virajith
-  # and Maheshika Lakmali. Sourced on Github - 
-  # https://github.com/gayanvirajith/harmony
-  basetheme: darken # pre defined thmes are darken, blue-water, redish.
-  author: # Author details
-    name: Taylor Burgess
-    email: tayloraburgess@gmail.com
-    url: http://tayloraburgess.github.io
-
-
-  # Profile links, leave blank to ignore
-  social: 
-    github: tayloraburgess
-    twitter: tayloraburgess
-  # Toggle disclaimer in footer
-  show_disclaimer: true
 
 # Conversion / Build settings 
 markdown:    kramdown
@@ -52,3 +34,6 @@ exclude:
 sass:
     sass_dir: assets/css/_sass
     style: :compressed
+
+gems:
+  - jekyll-feed
