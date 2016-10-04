@@ -7,7 +7,7 @@ I wasn’t planning to start this blog with something so personal—entries will
 
 From 2010-2014, I was a student at Samford University in Birmingham, AL, studying for my undergraduate. Yesterday morning, an image of a t-shirt popped up on Twitter. This particular t-shirt was in commemoration of a formal event for one of Samford’s sorority chapters, Alpha Delta Pi. I’ll let the image speak for itself:
 
-![A hand-drawn, old-looking map of Alabama that includes a horribly racist caricature of a black man eating a slice of watermelon and a group of slaves picking cotton. Yep.]({{ site.url }}/assets/alabama.jpg)
+![A hand-drawn, old-looking map of Alabama that includes a horribly racist caricature of a black man eating a slice of watermelon and a group of slaves picking cotton. Yep.]({{ '/assets/posts/alabama.jpg' | prepend: site.baseurl | prepend: site.url }})
 
 If it’s not abundantly clear, that is a caricatured black man eating a large slice of watermelon with a group of slaves picking cotton right above him. Allegedly, the Samford administration saw the design and immediately forbade the sorority from using it. Of course, ΑΔΠ proceeded to make shirts with the design anyway, because why not—everybody eats watermelon, right? Watermelon’s great. [No harm done](http://www.theatlantic.com/national/archive/2014/12/how-watermelons-became-a-racist-trope/383529/).
 

@@ -74,7 +74,7 @@ ___
 
 ###### [GitHub](https://github.com/leeorb321/expenses) / [Live Demo](http://fierce-cove-57868.herokuapp.com)
 
-![expenses 1]({{ '/assets/projects/expenses_1.png' | prepend: site.baseurl | prepend: site.url }})  
+![expenses 1]({{ '/assets/projects/expenses_1.png' | prepend: site.baseurl | prepend: site.url }})
 ![expenses 2]({{ '/assets/projects/expenses_2.png' | prepend: site.baseurl | prepend: site.url }})
 
 Personal finance tracker with data visualization. 
@@ -91,7 +91,7 @@ ___
 
 ###### [GitHub](https://github.com/elenacaseyroby/YoutubeMusicLib) / [Build](http://youtube-music-library.herokuapp.com)
 
-![YouTubeMusicLib 1]({{ '/assets/projects/youtubemusiclib_1.png' | prepend: site.baseurl | prepend: site.url }})  
+![YouTubeMusicLib 1]({{ '/assets/projects/youtubemusiclib_1.png' | prepend: site.baseurl | prepend: site.url }})
 ![YouTubeMusicLib 2]({{ '/assets/projects/youtubemusiclib_2.png' | prepend: site.baseurl | prepend: site.url }})
 
 Web app that tracks a user’s music listening habits on YouTube (via the YouTube API) and makes recommendations using the collected data.
