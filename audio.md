@@ -3,7 +3,7 @@ layout: page
 title: Audio
 permalink: /audio/
 ---
-This is a short discography of completed recordings I've worked on.
+A short discography of completed recordings I've worked on.
 
 I'd love to take on new projects, so if you hear anything interesting and want to discuss an idea, [get in touch](mailto:tayloraburgess@gmail.com).
 

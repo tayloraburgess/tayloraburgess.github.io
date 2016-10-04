@@ -131,7 +131,9 @@ a:active, a:hover, a:focus {
 }
 
 img {
-  border: 0;
+  border: 1px;
+  border-style: solid;
+  border-color: gray;
   display: block;
   max-width: 100%;
   height: auto;
@@ -184,6 +186,7 @@ div.rc-scout {
 }
 
 img.social {
+  border: 0px;
   margin-left: 10px;
   margin-right: 10px;
   padding-top: 10px;
