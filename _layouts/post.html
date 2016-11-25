@@ -2,31 +2,30 @@
 layout: default
 ---
 
-<div class="page-content wc-container">
-	
-	<div class="post">
+<div>
+	<div>
 		<h1>{{ page.title }}</h1>
-		<p class="post-meta">
-	    <span class="post-date">
+		<p>
+	    <span>
     	{{ page.date | date: "%b %-d, %Y" }} 
 	    </span>
 		</p>		
-		<div class="post">
+		<div>
 			{{ content }}
 			<h5>Tags: {{ page.tags | array_to_sentence_string }}</h5>
 		</div>
 	</div>
 
-	<div class="post-footer">
-		<div class="column-1">
+	<div>
+		<div>
 			{% if page.previous %}
-				<a href="{{page.previous.url | prepend: site.baseurl | prepend: site.url }}"><< Older</a>
+				<a href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}"><< Older</a>
 			{% else %}
 				<span><< Older</span>
 			{% endif %}
 		</div>
-		<div class="column-2"><a href="{{ '/' | prepend: site.baseurl | prepend: site.url }} ">Home</a></div>
-		<div class="column-3">
+		<div><a href="{{ '/' | prepend: site.baseurl | prepend: site.url }} ">Home</a></div>
+		<div>
 			{% if page.next %}
 				<a href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}">Newer >></a>
 			{% else %}

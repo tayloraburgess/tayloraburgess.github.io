@@ -1,3 +1,3 @@
-# This is a blog.
+# This is a blog/portfolio site.
 
-It uses [Jekyll](http://jekyllrb.com/), and a heavily modified version of the [Harmony](https://github.com/gayanvirajith/harmony) theme.
+It uses [Jekyll](http://jekyllrb.com/).

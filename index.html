@@ -1,18 +1,18 @@
 ---
 layout: default
 ---
-<div id="home" class="page-content wc-container">
-	<div class="posts">
+<div>
+	<div>
   		{% for post in site.posts limit:5 %}
-  			<div class="post">
-    			<h3 class="post-title">
+  			<div>
+    			<h3>
 			      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
 			        {{ post.title }}
 			      </a>
     			</h3>
 
-          <p class="post-meta">
-            <span class="post-date">
+          <p>
+            <span>
             {{ post.date | date: "%b %-d, %Y" }} 
             </span>
           </p>          
@@ -28,7 +28,7 @@ layout: default
   			</div>
   		{% endfor %}
 	</div>
-	<div class="post-footer">
-		<div class="column-full"><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog Archive</a></div>
+	<div>
+		<div><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog Archive</a></div>
 	</div>
 </div>
