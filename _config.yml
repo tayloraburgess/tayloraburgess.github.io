@@ -16,8 +16,8 @@ exclude:
   - Gemfile.lock
 
 sass:
-    sass_dir: assets/css/_sass
-    style: :compressed
+    sass_dir: _assets/css/_sass
+    style: compressed
 
 gems:
   - jekyll-feed
