@@ -1,34 +1,49 @@
 ---
 layout: default
 ---
-<div>
-	<div>
-  		{% for post in site.posts limit:5 %}
-  			<div>
-    			<h3>
-			      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
-			        {{ post.title }}
-			      </a>
-    			</h3>
 
-          <p>
-            <span>
-            {{ post.date | date: "%b %-d, %Y" }} 
-            </span>
-          </p>          
-    			    			
-  				<p>
-	  				{{ post.excerpt }}	
-  				</p>
-  				<p>
-  					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
-  						Read More
-					</a>
-  				</p>
-  			</div>
-  		{% endfor %}
-	</div>
-	<div>
-		<div><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog Archive</a></div>
-	</div>
+<div class='main'>
+  <h1 class='title'>_Taylor</h1>
+  <h2 class='title expander'>+</h2>
+  <div class='links closed'>
+    <a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a>
+    <a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
+    <a href="{{ '/code' | prepend: site.baseurl | prepend: site.url }}">Code</a>
+    <a href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a>
+    <a href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Resume</a>
+  </div>
+  <h1 class='title'>Burgess</h1>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const ANIMATION_LENGTH = 1;
+    function flipState(state) {
+      return menuState ? false : true;
+    }
+    let menuState = false;
+    document.getElementsByClassName('expander')[0].addEventListener('click', (e) => {
+      menuState = flipState(menuState); 
+      const links = document.getElementsByClassName('links')[0]; 
+      if (menuState) {
+        const delay = -window.getComputedStyle(links).getPropertyValue('opacity') * ANIMATION_LENGTH;
+        links.style.animationDelay = `${delay}s`;
+        links.classList.remove('animate-closed');
+        setTimeout(() => {
+          links.classList.add('animate-open');
+          links.classList.remove('closed');
+          links.classList.add('open');
+        }, 0);
+      } else {  
+        const delay = -(1 - window.getComputedStyle(links).getPropertyValue('opacity')) * ANIMATION_LENGTH;
+        links.style.animationDelay = `${delay}s`;
+        links.classList.remove('animate-open');
+        setTimeout(() => {
+          links.classList.add('animate-closed');
+          links.classList.remove('open');
+          links.classList.add('closed');
+        }, 0);
+      }
+    });
+  });
+</script>
+

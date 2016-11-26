@@ -1,10 +1,84 @@
 ---
 ---
 
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+
+$main-back-color: white;
+$emph-back-color: gray;
+
+* {
+ font-family: 'Fira Mono', monospace; 
+}
+
+body {
+  margin: 0px;
+  background-color: $main-back-color;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0px;
+}
+div.main {
+  text-align: center;
+}
+
+@keyframes show-links {
+  from {
+    opacity: 0;
+    max-height: 0;
+    visibility: hidden;
+  }
+  to {
+    max-height: 300px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+div.links.animate-open {
+  animation-name: show-links;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+div.links.animate-closed {
+  animation-name: show-links;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+div.links.closed {
+  opacity: 0;
+  max-height: 0px;
+  visibility: hidden;
+}
+
+div.links.open {
+  opacity: 1;
+  max-height: 300px;
+  visibility: visible;
+}
+
 div.rc-scout {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10px;
-  width: 70px;
-  height: 70px;
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+}
+
+div.footer {
+  text-align: center;
+  background-color: $emph-back-color;
+  padding: 10px;
+}
+
+a.social-link {
+  margin: 5px;
+  text-decoration: none;
 }
