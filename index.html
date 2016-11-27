@@ -3,14 +3,16 @@ layout: default
 ---
 
 <div class='main'>
-  <h1 class='title'>_Taylor</h1>
-  <h2 class='title expander'>+</h2>
+  <h1 class='title'>Taylor</h1>
+  <h2 class='title expander closed'>+</h2>
   <div class='links closed'>
-    <a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a>
-    <a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
-    <a href="{{ '/code' | prepend: site.baseurl | prepend: site.url }}">Code</a>
-    <a href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a>
-    <a href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Resume</a>
+    <div class='container closed'>
+      <a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a>
+      <a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
+      <a href="{{ '/code' | prepend: site.baseurl | prepend: site.url }}">Code</a>
+      <a href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a>
+      <a href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Resume</a>
+    </div>
   </div>
   <h1 class='title'>Burgess</h1>
 </div>
@@ -20,28 +22,48 @@ layout: default
     function flipState(state) {
       return menuState ? false : true;
     }
+    function animateOpen(delay) {
+      const args = Array.prototype.slice.call(arguments);
+      args.shift();
+      args.forEach((arg) => {
+        arg.style.animationDelay = `${delay}s`;
+        arg.classList.remove('animate-closed');
+      });
+      setTimeout(() => {
+        args.forEach((arg) => {
+          arg.classList.add('animate-open');
+          arg.classList.remove('closed');
+          arg.classList.add('open');
+        });
+      }, 0);
+    }
+    function animateClosed(delay) {
+      const args = Array.prototype.slice.call(arguments);
+      args.shift();
+      args.forEach((arg) => {
+        arg.style.animationDelay = `${delay}s`;
+        arg.classList.remove('animate-open');
+      });
+      setTimeout(() => {
+        args.forEach((arg) => {
+          arg.classList.add('animate-closed');
+          arg.classList.remove('open');
+          arg.classList.add('closed');
+        });
+      }, 0);
+    }
     let menuState = false;
+    const links = document.getElementsByClassName('links')[0]; 
+    const container = document.getElementsByClassName('container')[0];
+    const expander = document.getElementsByClassName('expander')[0];
     document.getElementsByClassName('expander')[0].addEventListener('click', (e) => {
       menuState = flipState(menuState); 
-      const links = document.getElementsByClassName('links')[0]; 
       if (menuState) {
         const delay = -window.getComputedStyle(links).getPropertyValue('opacity') * ANIMATION_LENGTH;
-        links.style.animationDelay = `${delay}s`;
-        links.classList.remove('animate-closed');
-        setTimeout(() => {
-          links.classList.add('animate-open');
-          links.classList.remove('closed');
-          links.classList.add('open');
-        }, 0);
-      } else {  
+        animateOpen(delay, links, container, expander);
+      } else {
         const delay = -(1 - window.getComputedStyle(links).getPropertyValue('opacity')) * ANIMATION_LENGTH;
-        links.style.animationDelay = `${delay}s`;
-        links.classList.remove('animate-open');
-        setTimeout(() => {
-          links.classList.add('animate-closed');
-          links.classList.remove('open');
-          links.classList.add('closed');
-        }, 0);
+        animateClosed(delay, links, container, expander);
       }
     });
   });

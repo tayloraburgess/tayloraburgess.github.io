@@ -7,7 +7,7 @@ $main-back-color: white;
 $emph-back-color: gray;
 
 * {
- font-family: 'Fira Mono', monospace; 
+  font-family: 'Fira Mono', monospace; 
 }
 
 body {
@@ -24,6 +24,9 @@ div {
 }
 div.main {
   text-align: center;
+  position: relative;
+  width: 80%;
+  margin: auto;
 }
 
 @keyframes show-links {
@@ -37,6 +40,90 @@ div.main {
     opacity: 1;
     visibility: visible;
   }
+}
+
+@keyframes show-container {
+  from {
+    width: 0%;
+    left: 50%;
+    right: 50%;
+  }
+  to {
+    width: 50%;
+    left: 25%;
+    right: 25%;
+  }
+}
+
+@keyframes rotate-expander {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+.expander {
+  display: inline-block;
+}
+
+.expander.open {
+  transform: rotate(45deg);
+}
+
+.expander.animate-open {
+  animation-name: rotate-expander;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.expander.animate-closed {
+  animation-name: rotate-expander;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+div.container {
+  position: relative;
+  width: 100%;
+}
+
+div.container:before, div.container:after {
+  content: "";
+  background: black;
+  position: absolute;
+  height: 1px;
+}
+
+div.container:after {
+  bottom: 0;
+}
+
+div.container.open:before, div.container.open:after {
+  width: 50%;
+  left: 25%;
+  right: 25%;
+}
+
+div.container.closed:before, div.container.closed:after {
+  width: 0%;
+  left: 50%;
+  right: 50%;
+}
+
+div.container.animate-open:before, div.container.animate-open:after {
+  animation-name: show-container;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+div.container.animate-closed:before, div.container.animate-closed:after {
+  animation-name: show-container;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
 }
 
 div.links.animate-open {
