@@ -10,10 +10,13 @@ $emph-color-lighter: #003824;
 $menu-back-color: #4C6D63;
 $other-1: #8B9993;
 $other-2: #57F2B6;
+$text-color: #3B3B3B;
 
 body {
   margin: 0px;
   background-color: white;
+  width: 100vw;
+  height: 100vh;
 }
 
 div {
@@ -24,15 +27,45 @@ div {
   margin: 0px;
 }
 
-div.content {
-  float: left;
-  margin-left: 132px;
-  margin-bottom: 102px; 
-  min-width: 100vw;
-  min-height: 100vh;
-  padding: 10px;
+div.holder {
+  padding-left: 132px;
+  padding-bottom: 102px; 
+  min-width: 100%;
+  min-height: 100%;
   background-color: $main-back-color;
+}
+
+div.content {
+  padding: 20px;
   font-family: 'Heebo', sans-serif;
+  color: $text-color;
+}
+table {
+    border-collapse: collapse;
+}
+td {
+  border: solid;
+  border-color: white;
+  border-width: 3px;
+  padding: 5px;
+}
+
+tr:first-child {
+  color: $main-back-color;    
+  background-color: $menu-back-color;  
+  font-family: 'Fira Mono', monospace; 
+}
+
+hr {
+  border: 0;
+  background: white;
+  height: 3px;
+}
+img {
+  max-width: 100%; 
+}
+h1 {
+  margin-top: 0px;  
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Fira Mono', monospace; 
@@ -125,13 +158,10 @@ div.splitter {
   font-weight: 100;
 }
 
-h1 {
+h1.title, h2.title {
   color: $emph-back-color;
 }
 
-h2 {
-  color: $emph-back-color;
-}
 h2.title {
   line-height: 30px;
 }
