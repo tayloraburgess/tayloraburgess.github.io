@@ -10,9 +10,9 @@ If I've accidentally left anything out, you can probably find it on [GitHub](htt
 
 ___
 
-### fielding-chat
+## fielding-chat
 
-###### [GitHub](https://github.com/tayloraburgess/fielding-chat) / [Live Demo](https://fielding-chat.herokuapp.com/api/v1)
+#### [GitHub](https://github.com/tayloraburgess/fielding-chat) / [Live Demo](https://fielding-chat.herokuapp.com/api/v1)
 
 Client-agnostic RESTful API server for a chat system. Represents user, message, and log data for clients; and handles requests to manipulate those resources. Uses [application/hal+json](http://stateless.co/hal_specification.html) for resource representations and is fully discoverable from the root API url.
 
@@ -22,9 +22,9 @@ Built using Node.js, Express.js and MongoDB (via [Mongoose](http://mongoosejs.co
 
 ___
 
-### rc-niceties
+## rc-niceties
 
-###### [GitHub](https://github.com/mjec/rc-niceties) / [Build](https://niceties.recurse.com/) (requires Recurse Center authentication)
+#### [GitHub](https://github.com/mjec/rc-niceties) / [Build](https://niceties.recurse.com/) (requires Recurse Center authentication)
 
 ![rc-niceties]({{ '/assets/projects/rcniceties.png' | prepend: site.baseurl | prepend: site.url }})
 
@@ -40,9 +40,9 @@ Original project structure by [mjec](https://github.com/mjec); I paired closely 
 
 ___
 
-### Totes-Random
+## Totes-Random
 
-###### [GitHub](https://github.com/JKiely/Totes-Random)
+#### [GitHub](https://github.com/JKiely/Totes-Random)
 
 ![Totes-Random]({{ '/assets/projects/totesrandom.png' | prepend: site.baseurl | prepend: site.url }})
 
@@ -56,9 +56,9 @@ Paired on this project with [JKieley](https://github.com/JKiely) and [phasedchir
 
 ___
 
-### RoboDJ
+## RoboDJ
 
-###### [GitHub](https://github.com/JesseRap/RoboDJ)
+#### [GitHub](https://github.com/JesseRap/RoboDJ)
 
 Web app that analyzes audio tracks, looking for peaks, BPM, and section breaks, and lets the user mix & auto-crossfade between the tracks. Also, experimentally, uses [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) to render the interface and do audio analysis concurrently in a more timely manner.
 
@@ -70,9 +70,9 @@ This is primarily [JesseRap](https://github.com/JesseRap/RoboDJ)'s project, but 
 
 ___
 
-### expenses
+## expenses
 
-###### [GitHub](https://github.com/leeorb321/expenses) / [Live Demo](http://fierce-cove-57868.herokuapp.com)
+#### [GitHub](https://github.com/leeorb321/expenses) / [Live Demo](http://fierce-cove-57868.herokuapp.com)
 
 ![expenses 1]({{ '/assets/projects/expenses_1.png' | prepend: site.baseurl | prepend: site.url }})
 ![expenses 2]({{ '/assets/projects/expenses_2.png' | prepend: site.baseurl | prepend: site.url }})
@@ -87,9 +87,9 @@ Paired on the majority of this project with [leeorb231](https://github.com/leeor
 
 ___
 
-### YouTubeMusicLib
+## YouTubeMusicLib
 
-###### [GitHub](https://github.com/elenacaseyroby/YoutubeMusicLib) / [Build](http://youtube-music-library.herokuapp.com)
+#### [GitHub](https://github.com/elenacaseyroby/YoutubeMusicLib) / [Build](http://youtube-music-library.herokuapp.com)
 
 ![YouTubeMusicLib 1]({{ '/assets/projects/youtubemusiclib_1.png' | prepend: site.baseurl | prepend: site.url }})
 ![YouTubeMusicLib 2]({{ '/assets/projects/youtubemusiclib_2.png' | prepend: site.baseurl | prepend: site.url }})
@@ -104,9 +104,9 @@ Primarily [elenacaseyroby](https://github.com/elenacaseyroby)'s project, but I i
 
 ___
 
-### Woog
+## Woog
 
-###### [GitHub](https://github.com/lamarqua/Woog)
+#### [GitHub](https://github.com/lamarqua/Woog)
 
 Browser-based module synthesizer. Has support for filters, polyphony (currently only low-note priority), and several other parameter-controlled effets.
 
@@ -118,9 +118,9 @@ Paired on this with [lamarqua](https://github.com/lamarqua).
 
 ___
 
-### markdown-preview
+## markdown-preview
 
-###### [GitHub](https://github.com/tayloraburgess/markdown-preview)
+#### [GitHub](https://github.com/tayloraburgess/markdown-preview)
 
 Interpreter/compiler for Markdown, outputing HTML.
 
