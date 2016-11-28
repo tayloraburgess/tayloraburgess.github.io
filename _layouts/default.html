@@ -78,7 +78,7 @@
         animateClosed(delay, links, container, expander);
       }
     });
-    if (window.outerWidth > 900) {
+    if (window.matchMedia('max-device-width: 800px').matches) {
       document.getElementsByClassName('expander')[0].addEventListener('mouseover', (e) => {
         if (!menuState) {
           menuState = flipState(menuState); 
