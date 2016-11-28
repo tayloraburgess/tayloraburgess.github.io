@@ -4,8 +4,7 @@ layout: default
 
 <div class='main'>
   <div class='menu'>
-    <h2 class='title'> Taylor</h2>
-    <h2 class='title'>Burgess</h2>
+    <h2 class='title'>Taylor<br>Burgess</h2>
     <h1 class='title expander closed'>+</h1>
     <div class='links closed'>
       <div class='container closed'>
@@ -68,6 +67,13 @@ layout: default
         const delay = -(1 - window.getComputedStyle(links).getPropertyValue('opacity')) * ANIMATION_LENGTH;
         animateClosed(delay, links, container, expander);
       }
+    });
+    document.getElementsByClassName('expander')[0].addEventListener('mouseover', (e) => {
+      if (!menuState) {
+        menuState = flipState(menuState); 
+        const delay = -window.getComputedStyle(links).getPropertyValue('opacity') * ANIMATION_LENGTH;
+        animateOpen(delay, links, container, expander);
+      } 
     });
   });
 </script>

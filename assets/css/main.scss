@@ -5,6 +5,7 @@
 
 $main-back-color: #C7C7C7;
 $emph-back-color: #001E13;
+$emph-color-lighter: #003824;
 $menu-back-color: #4C6D63;
 $other-1: #8B9993;
 $other-2: #57F2B6;
@@ -38,6 +39,7 @@ div.menu {
   width: 120px;
   height: 100%;
   padding: 7px;
+  padding-right: 11px;
   background-color: $menu-back-color;
 }
 
@@ -85,16 +87,31 @@ div.splitter {
 @keyframes rotate-expander {
   from {
     transform: rotate(0deg);
+    color: $emph-back-color;
   }
   to {
     transform: rotate(45deg);
+    color: $other-1;
   }
 }
+
+@keyframes pulse {
+  0% {
+    color: $emph-back-color;
+  } 
+  50% {
+    color: $emph-color-lighter;
+  }
+  100% {
+    color: $emph-back-color;
+  }
+}
+
 
 .expander {
   display: inline-block;
   font-size: 300%; 
-  line-height: 40px;
+  line-height: 35px;
   font-weight: 100;
 }
 
@@ -105,10 +122,17 @@ h1 {
 h2 {
   color: $emph-back-color;
 }
+h2.title {
+  line-height: 30px;
+}
 
 a {
   color: $other-1;
   text-decoration: none;
+}
+
+p.title {
+  padding-left: 6px;
 }
 
 p.title.top {
@@ -118,10 +142,17 @@ p.title.top {
 p.title.bottom {
   padding-bottom: 10px;
 }
+
 .expander.open {
   transform: rotate(45deg);
+  color: $other-1;
 }
 
+.expander.closed {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
 .expander.animate-open {
   animation-name: rotate-expander;
   animation-duration: 0.5s;
@@ -135,6 +166,7 @@ p.title.bottom {
   animation-fill-mode: forwards;
   animation-direction: reverse;
   animation-timing-function: linear;
+  animation-iteration-count: 1;
 }
 
 div.container {
@@ -142,6 +174,7 @@ div.container {
   width: 100%;
   height: inherit;
   overflow: hidden;
+  margin-left: 2px;
 }
 
 div.container:before, div.container:after {
