@@ -37,8 +37,24 @@ div.holder {
 
 div.content {
   padding: 20px;
+  padding-left: 45px;
+  padding-right: 45px;
   font-family: 'Heebo', sans-serif;
   color: $text-color;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  border: solid;
+  border-color: white;
+  border-width: 3px;
+  max-width: 100%;
+}
+img.social-link {
+  border: 0;
 }
 table {
     border-collapse: collapse;
@@ -56,14 +72,16 @@ tr:first-child {
   font-family: 'Fira Mono', monospace; 
 }
 
+ul {
+  list-style-type: square;
+}
+
 hr {
   border: 0;
   background: white;
   height: 3px;
 }
-img {
-  max-width: 100%; 
-}
+
 h1 {
   margin-top: 0px;  
 }
@@ -97,6 +115,23 @@ div.splitter {
   width: 100%;
   height: 12px;
   background-color: white;
+}
+
+div.nav-link {
+  display: inline-block;
+  width: 33%;
+}
+
+div.nav-link.left {
+  text-align: left;
+}
+
+div.nav-link.right {
+  text-align: right;
+}
+
+div.blog-nav {
+  text-align: center;
 }
 
 @keyframes show-links {
@@ -167,8 +202,40 @@ h2.title {
 }
 
 a {
-  color: $other-1;
+  color: $menu-back-color;
   text-decoration: none;
+}
+
+@keyframes link-color {
+  from {
+    color: $menu-back-color;
+  }
+  to {
+    color: $other-1;
+  }
+}
+
+@keyframes menu-link-color {
+  from {
+    color: $other-1;
+  }
+  to {
+    color: $emph-back-color;
+  }
+}
+a:hover {
+  color: $other-1;
+  animation-name: link-color;
+  animation-duration: 0.2s;
+}
+
+a.menu {
+  color: $other-1;
+}
+
+a.menu:hover {
+  color: $emph-back-color;
+  animation-name: menu-link-color;
 }
 
 p.title {
@@ -287,11 +354,15 @@ div.links.open {
 div.rc-scout {
   display: inline-block;
   position: relative;
-  top: 12px;
+  top: 4px;
   width: 48px;
   height: 60px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+div.footer-content {
+  padding-left: 132px;
 }
 
 footer {

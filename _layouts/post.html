@@ -5,32 +5,26 @@ layout: default
 <div>
 	<div>
 		<h1>{{ page.title }}</h1>
-		<p>
-	    <span>
+		<h3>
     	{{ page.date | date: "%b %-d, %Y" }} 
-	    </span>
-		</p>		
+    </h3>
 		<div>
 			{{ content }}
-			<h5>Tags: {{ page.tags | array_to_sentence_string }}</h5>
+			<h3>Tags: {{ page.tags | array_to_sentence_string }}</h3>
 		</div>
 	</div>
 
-	<div>
-		<div>
+	<div class='blog-nav'>
+		<div class='nav-link left'>
 			{% if page.previous %}
-				<a href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}"><< Older</a>
-			{% else %}
-				<span><< Older</span>
+      <h4><a href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}">Previous</a></h4>
 			{% endif %}
 		</div>
-		<div><a href="{{ '/' | prepend: site.baseurl | prepend: site.url }} ">Home</a></div>
-		<div>
+    <div class='nav-link'><h4><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }} ">Archive</a></h4></div>
+		<div class='nav-link right'>
 			{% if page.next %}
-				<a href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}">Newer >></a>
-			{% else %}
-				<span>Newer >></span>
-			{% endif %}
+      <h4><a href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}">Next</a></h4>
+    {% endif %}
 		</div>
 	</div>
 </div>
