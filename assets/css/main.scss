@@ -28,20 +28,23 @@ div {
 }
 
 div.main {
-  position: relative;
+  position: fixed;
   width: 120px;
   padding: 7px;
+  height: 100vh;
   background-color: $menu-back-color;
 }
 
 @keyframes show-links {
   from {
     opacity: 0;
-    max-height: 0;
+    max-height: 0px;
+    height: 0px;
     visibility: hidden;
   }
   to {
-    max-height: 300px;
+    max-height: 145px;
+    height: 145px;
     opacity: 1;
     visibility: visible;
   }
@@ -76,33 +79,57 @@ div.main {
   font-weight: 100;
 }
 
+h1 {
+  color: $emph-back-color;
+}
+
+h2 {
+  color: $emph-back-color;
+}
+
+a {
+  color: $other-1;
+  text-decoration: none;
+}
+
+p.title.top {
+  padding-top: 10px;
+}
+
+p.title.bottom {
+  padding-bottom: 10px;
+}
 .expander.open {
   transform: rotate(45deg);
 }
 
 .expander.animate-open {
   animation-name: rotate-expander;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 .expander.animate-closed {
   animation-name: rotate-expander;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-direction: reverse;
+  animation-timing-function: linear;
 }
 
 div.container {
   position: relative;
   width: 100%;
+  height: inherit;
+  overflow: hidden;
 }
 
 div.container:before, div.container:after {
   content: "";
   background: $emph-back-color;
   position: absolute;
-  height: 1px;
+  height: 4px;
 }
 
 div.container:after {
@@ -123,39 +150,45 @@ div.container.closed:before, div.container.closed:after {
 
 div.container.animate-open:before, div.container.animate-open:after {
   animation-name: show-container;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 div.container.animate-closed:before, div.container.animate-closed:after {
   animation-name: show-container;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-direction: reverse;
+  animation-timing-function: linear;
 }
 
 div.links.animate-open {
   animation-name: show-links;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 div.links.animate-closed {
   animation-name: show-links;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-direction: reverse;
+  animation-timing-function: linear;
 }
 
 div.links.closed {
   opacity: 0;
   max-height: 0px;
+  height: 0px;
   visibility: hidden;
 }
 
 div.links.open {
   opacity: 1;
-  max-height: 300px;
+  max-height: 145px;
+  height: 145px;
   visibility: visible;
 }
 
@@ -174,8 +207,8 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 110px;
-  line-height: 150px;
+  height: 90px;
+  line-height: 130px;
   text-align: center;
   background-color: $emph-back-color;
 }
