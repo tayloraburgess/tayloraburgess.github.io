@@ -3,22 +3,25 @@ layout: default
 ---
 
 <div class='main'>
-  <h2 class='title'> Taylor</h2>
-  <h2 class='title'>Burgess</h2>
-  <h1 class='title expander closed'>+</h1>
-  <div class='links closed'>
-    <div class='container closed'>
-      <p class='title top'><a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a></p>
-      <p class='title'><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a></p>
-      <p class='title'><a href="{{ '/code' | prepend: site.baseurl | prepend: site.url }}">Code</a></p>
-      <p class='title'><a href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a></p>
-      <p class='title bottom'><a href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Resume</a></p>
+  <div class='menu'>
+    <h2 class='title'> Taylor</h2>
+    <h2 class='title'>Burgess</h2>
+    <h1 class='title expander closed'>+</h1>
+    <div class='links closed'>
+      <div class='container closed'>
+        <p class='title top'><a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a></p>
+        <p class='title'><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a></p>
+        <p class='title'><a href="{{ '/code' | prepend: site.baseurl | prepend: site.url }}">Code</a></p>
+        <p class='title'><a href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a></p>
+        <p class='title bottom'><a href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Resume</a></p>
+      </div>
     </div>
-  </div>
+  </div> 
+  <div class='separator'></div>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const ANIMATION_LENGTH = 5;
+    const ANIMATION_LENGTH = 0.5;
     function flipState(state) {
       return menuState ? false : true;
     }

@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono');
 
-$main-back-color: #F2F2F2;
+$main-back-color: #C7C7C7;
 $emph-back-color: #001E13;
 $menu-back-color: #4C6D63;
 $other-1: #8B9993;
@@ -29,10 +29,29 @@ div {
 
 div.main {
   position: fixed;
-  width: 120px;
-  padding: 7px;
+  width: 132px;
   height: 100vh;
+}
+
+div.menu {
+  float: left;
+  width: 120px;
+  height: 100%;
+  padding: 7px;
   background-color: $menu-back-color;
+}
+
+div.separator {
+  float: left;
+  width: 12px;
+  height: 100%;
+  background-color: white;
+}
+
+div.splitter {
+  width: 100%;
+  height: 12px;
+  background-color: white;
 }
 
 @keyframes show-links {
@@ -207,8 +226,8 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 90px;
-  line-height: 130px;
+  height: 102px;
+  line-height: 142px;
   text-align: center;
   background-color: $emph-back-color;
 }
