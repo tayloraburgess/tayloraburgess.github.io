@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /
 ---
 
 Hi! I'm Taylor. ([Say hello.](mailto:tayloraburgess@gmail.com)) I'm currently based in New York, and I:
