@@ -78,13 +78,15 @@
         animateClosed(delay, links, container, expander);
       }
     });
-    document.getElementsByClassName('expander')[0].addEventListener('mouseover', (e) => {
-      if (!menuState) {
-        menuState = flipState(menuState); 
-        const delay = -window.getComputedStyle(links).getPropertyValue('opacity') * ANIMATION_LENGTH;
-        animateOpen(delay, links, container, expander);
-      } 
-    });
+    if (window.outerWidth > 900) {
+      document.getElementsByClassName('expander')[0].addEventListener('mouseover', (e) => {
+        if (!menuState) {
+          menuState = flipState(menuState); 
+          const delay = -window.getComputedStyle(links).getPropertyValue('opacity') * ANIMATION_LENGTH;
+          animateOpen(delay, links, container, expander);
+        } 
+      });
+    }
   });
 </script>
       <script async defer src="https://www.recurse-scout.com/loader.js?t=3a2b9d9ef554dd4a4a16055f3057c0b9"></script>
