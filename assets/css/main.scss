@@ -13,6 +13,7 @@ $emph-back-color: gray;
 body {
   margin: 0px;
   background-color: $main-back-color;
+  font-weight: 700;
 }
 
 div {
@@ -22,11 +23,11 @@ div {
 .title {
   margin: 0px;
 }
+
 div.main {
-  text-align: center;
   position: relative;
-  width: 80%;
-  margin: auto;
+  width: 120px;
+  padding: 7px;
 }
 
 @keyframes show-links {
@@ -45,13 +46,13 @@ div.main {
 @keyframes show-container {
   from {
     width: 0%;
-    left: 50%;
-    right: 50%;
+    left: 0%;
+    right: 0%;
   }
   to {
-    width: 50%;
-    left: 25%;
-    right: 25%;
+    width: 100%;
+    left: 0%;
+    right: 100%;
   }
 }
 
@@ -66,6 +67,9 @@ div.main {
 
 .expander {
   display: inline-block;
+  font-size: 300%; 
+  line-height: 40px;
+  font-weight: 100;
 }
 
 .expander.open {
@@ -92,7 +96,7 @@ div.container {
 
 div.container:before, div.container:after {
   content: "";
-  background: black;
+  background: $emph-back-color;
   position: absolute;
   height: 1px;
 }
@@ -102,15 +106,15 @@ div.container:after {
 }
 
 div.container.open:before, div.container.open:after {
-  width: 50%;
-  left: 25%;
-  right: 25%;
+  width: 100%;
+  left: 0%;
+  right: 100%;
 }
 
 div.container.closed:before, div.container.closed:after {
   width: 0%;
-  left: 50%;
-  right: 50%;
+  left: 0%;
+  right: 0%;
 }
 
 div.container.animate-open:before, div.container.animate-open:after {
@@ -152,20 +156,27 @@ div.links.open {
 }
 
 div.rc-scout {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  width: 60px;
+  display: inline-block;
+  position: relative;
+  top: 12px;
+  width: 48px;
   height: 60px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-div.footer {
+footer {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
   text-align: center;
   background-color: $emph-back-color;
-  padding: 10px;
 }
 
-a.social-link {
-  margin: 5px;
-  text-decoration: none;
+div.social-link {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
 }
