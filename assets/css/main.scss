@@ -2,6 +2,7 @@
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+@import url('https://fonts.googleapis.com/css?family=Heebo');
 
 $main-back-color: #C7C7C7;
 $emph-back-color: #001E13;
@@ -10,14 +11,9 @@ $menu-back-color: #4C6D63;
 $other-1: #8B9993;
 $other-2: #57F2B6;
 
-* {
-  font-family: 'Fira Mono', monospace; 
-}
-
 body {
   margin: 0px;
-  background-color: $main-back-color;
-  font-weight: 700;
+  background-color: white;
 }
 
 div {
@@ -28,7 +24,21 @@ div {
   margin: 0px;
 }
 
+div.content {
+  float: left;
+  margin-left: 132px;
+  margin-bottom: 102px; 
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 10px;
+  background-color: $main-back-color;
+  font-family: 'Heebo', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fira Mono', monospace; 
+}
 div.main {
+  font-family: 'Fira Mono', monospace; 
   position: fixed;
   width: 132px;
   height: 100vh;
