@@ -85,6 +85,9 @@
     }
     */  
     expander.addEventListener('click', (e) => {
+      if (e.target.style.animationName === 'pulse') {
+        e.target.style.animationName = 'rotate-expander';
+      }
       if (!isRunning) {
         menuState = flipState(menuState); 
         if (menuState) {
