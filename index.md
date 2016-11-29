@@ -4,7 +4,7 @@ title: About
 permalink: /
 ---
 
-Hi! I'm Taylor. ([Say hello.](mailto:tayloraburgess@gmail.com)) I'm currently based in New York, and I:
+Hi! I'm Taylor Burgess. ([Say hello.](mailto:tayloraburgess@gmail.com)) I'm currently based in New York, and I:
 
 - [Write](/blog/) words (some fiction, some poetry--but mostly just blog here)
 - [Record](/audio/) and [play](http://presssounds.bandcamp.com/) music

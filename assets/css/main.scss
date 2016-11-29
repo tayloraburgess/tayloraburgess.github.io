@@ -51,6 +51,9 @@ img {
   border-width: 3px;
   max-width: 100%;
 }
+img.logo {
+  border: 0px;
+}
 img.social-link {
   border: 0;
   width: 48px;
@@ -392,6 +395,11 @@ div.social-link {
 }
 
 @media (max-device-width: 800px) {
+  img.logo {
+    height: 125px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   div.main {
     width: 100%;        
     height: auto;
@@ -418,7 +426,7 @@ div.social-link {
   div.holder {
     padding-left: 0px;
     padding-bottom: 185px;
-    padding-top: 223px;
+    padding-top: 268px;
   }
   h2.title {
     font-size: 60px;
