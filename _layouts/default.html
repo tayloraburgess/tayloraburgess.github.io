@@ -31,15 +31,22 @@
       </footer>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const ANIMATION_LENGTH = 0.5;
+    const ANIMATION_LENGTH = 400;
+    let menuState = false;
+    let isRunning = false;
+    const links = document.getElementsByClassName('links')[0]; 
+    const container = document.getElementsByClassName('container')[0];
+    const expander = document.getElementsByClassName('expander')[0];
     function flipState(state) {
       return menuState ? false : true;
     }
-    function animateOpen(delay) {
+    function animateOpen() {
+      isRunning = true;
+      setTimeout(() => {
+        isRunning = false;
+      }, 1000);
       const args = Array.prototype.slice.call(arguments);
-      args.shift();
       args.forEach((arg) => {
-        arg.style.animationDelay = `${delay}s`;
         arg.classList.remove('animate-closed');
       });
       setTimeout(() => {
@@ -50,11 +57,13 @@
         });
       }, 0);
     }
-    function animateClosed(delay) {
+    function animateClosed() {
+      isRunning = true;
+      setTimeout(() => {
+        isRunning = false;
+      }, 1000);
       const args = Array.prototype.slice.call(arguments);
-      args.shift();
       args.forEach((arg) => {
-        arg.style.animationDelay = `${delay}s`;
         arg.classList.remove('animate-open');
       });
       setTimeout(() => {
@@ -65,29 +74,24 @@
         });
       }, 0);
     }
-    let menuState = false;
-    const links = document.getElementsByClassName('links')[0]; 
-    const container = document.getElementsByClassName('container')[0];
-    const expander = document.getElementsByClassName('expander')[0];
-    document.getElementsByClassName('expander')[0].addEventListener('click', (e) => {
-      menuState = flipState(menuState); 
-      if (menuState) {
-        const delay = -window.getComputedStyle(links).getPropertyValue('opacity') * ANIMATION_LENGTH;
-        animateOpen(delay, links, container, expander);
-      } else {
-        const delay = -(1 - window.getComputedStyle(links).getPropertyValue('opacity')) * ANIMATION_LENGTH;
-        animateClosed(delay, links, container, expander);
-      }
-    });
     if (window.matchMedia('(min-device-width: 800px)').matches) {
-      document.getElementsByClassName('expander')[0].addEventListener('mouseover', (e) => {
-        if (!menuState) {
+      expander.addEventListener('mouseover', (e) => {
+        if (!menuState && !isRunning) {
           menuState = flipState(menuState); 
-          const delay = -window.getComputedStyle(links).getPropertyValue('opacity') * ANIMATION_LENGTH;
-          animateOpen(delay, links, container, expander);
+          animateOpen(links, container, expander);
         } 
       });
     }
+    expander.addEventListener('click', (e) => {
+      if (!isRunning) {
+        menuState = flipState(menuState); 
+        if (menuState) {
+          animateOpen(links, container, expander);
+        } else {
+          animateClosed(links, container, expander);
+        }
+      }
+    });
   });
 </script>
       <script async defer src="https://www.recurse-scout.com/loader.js?t=3a2b9d9ef554dd4a4a16055f3057c0b9"></script>

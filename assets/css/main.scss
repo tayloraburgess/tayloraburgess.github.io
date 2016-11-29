@@ -8,6 +8,7 @@ $menu-back-color: #4C6D63;
 $other-1: #8B9993;
 $other-2: #57F2B6;
 $text-color: #3B3B3B;
+$animation-speed: 0.2s;
 
 body {
   margin: 0px;
@@ -34,8 +35,8 @@ div.holder {
 
 div.content {
   padding: 20px;
-  padding-left: 45px;
-  padding-right: 45px;
+  padding-left: 125px;
+  padding-right: 125px;
   font-family: 'Heebo', sans-serif;
   color: $text-color;
 }
@@ -271,14 +272,14 @@ p.title.bottom {
 }
 .expander.animate-open {
   animation-name: rotate-expander;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
 
 .expander.animate-closed {
   animation-name: rotate-expander;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: forwards;
   animation-direction: reverse;
   animation-timing-function: linear;
@@ -318,14 +319,14 @@ div.container.closed:before, div.container.closed:after {
 
 div.container.animate-open:before, div.container.animate-open:after {
   animation-name: show-container;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
 
 div.container.animate-closed:before, div.container.animate-closed:after {
   animation-name: show-container;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: forwards;
   animation-direction: reverse;
   animation-timing-function: linear;
@@ -333,14 +334,14 @@ div.container.animate-closed:before, div.container.animate-closed:after {
 
 div.links.animate-open {
   animation-name: show-links;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
 
 div.links.animate-closed {
   animation-name: show-links;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: forwards;
   animation-direction: reverse;
   animation-timing-function: linear;
@@ -478,14 +479,14 @@ div.container:after {
     }
 div.container.animate-open:before {
   animation-name: show-container;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
 
 div.container.animate-closed:before {
   animation-name: show-container;
-  animation-duration: 0.5s;
+  animation-duration: $animation-speed;
   animation-fill-mode: backwards;
   animation-timing-function: linear;
 }
