@@ -400,6 +400,8 @@ div.social-link {
     height: 125px;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: inline;
+    vertical-align: middle;
   }
   div.main {
     width: 100%;        
@@ -407,19 +409,18 @@ div.social-link {
   }
   div.menu {
     width: 100%;
-    height: auto;
+    min-height: 179px;
+    max-height: 579px;
+    padding-left: 80px;
+    padding-right: 80px;
     float: none;
-    text-align: center;
-    padding-left: 70px;
-    padding-right: 70px;
   }
   div.separator {
    width: 100%; 
    height: 12px;
   }
   div.links {
-    display: flex;
-    align-items: center;
+    text-align: center;
   } 
   div.footer-content {
     padding: 0px;
@@ -427,7 +428,7 @@ div.social-link {
   div.holder {
     padding-left: 0px;
     padding-bottom: 185px;
-    padding-top: 268px;
+    padding-top: 179px;
   }
   h2.title {
     font-size: 60px;
@@ -438,8 +439,10 @@ div.social-link {
     padding-top: 17px;
   }
   .expander {
-    font-size: 800%;
-    margin-top: 17px;
+    position: absolute;
+    right: 63px;
+    top: 83px;
+    font-size: 900%;
   }
   a.menu {
     font-size: 260%;
@@ -508,7 +511,7 @@ div.nav-link {
   font-size: 200%;
 }
 div.content {
-  padding-top: 20px;
+  padding-top: 50px;
 }
 footer {
   height: 185px;
