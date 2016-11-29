@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Heebo" rel="stylesheet">
   </head>
     <body>
 <div class='main'>
@@ -78,7 +79,7 @@
         animateClosed(delay, links, container, expander);
       }
     });
-    if (window.matchMedia('max-device-width: 800px').matches) {
+    if (window.matchMedia('(min-device-width: 800px)').matches) {
       document.getElementsByClassName('expander')[0].addEventListener('mouseover', (e) => {
         if (!menuState) {
           menuState = flipState(menuState); 
