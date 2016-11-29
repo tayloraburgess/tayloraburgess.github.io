@@ -60,10 +60,9 @@ pre.highlight {
   margin-top: 25px;
   margin-bottom: 25px;
 }
-code {
+code, blockquote {
   background-color: white;
   padding: 12px;
-  width: 100%;
 }
 table {
   border-collapse: collapse;
@@ -426,6 +425,9 @@ div.social-link {
     padding: 10px;
     line-height: 50px;
   }
+  p.title.top {
+    padding-top: 17px;
+  }
   .expander {
     font-size: 800%;
     margin-top: 17px;
@@ -434,8 +436,8 @@ div.social-link {
     font-size: 260%;
   }
   div.links.open {
-    height: 333px;
-    max-height: 333px;
+    height: 340px;
+    max-height: 340px;
   }
   @keyframes show-links {
   from {
@@ -445,8 +447,8 @@ div.social-link {
     visibility: hidden;
   }
   to {
-    max-height: 333px;
-    height: 333px;
+    max-height: 340px;
+    height: 340px;
     opacity: 1;
     visibility: visible;
   }
@@ -466,6 +468,9 @@ div.social-link {
 
 div.container:after {
   height: 0px;    
+}
+div.container:before {
+  height: 9px;
 }
     div.container.open:before {
       width: 100%;
@@ -490,6 +495,9 @@ div.container.animate-closed:before {
   animation-fill-mode: backwards;
   animation-timing-function: linear;
 }
+div.nav-link {
+  font-size: 200%;
+}
 footer {
   height: 185px;
   line-height: 272px;
@@ -510,5 +518,4 @@ pre.highlight {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
 } 
