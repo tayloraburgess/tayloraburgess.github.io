@@ -1,106 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Heebo" rel="stylesheet">
   </head>
-    <body>
-<div class='main'>
-  <div class='menu'>
-    <a href='{{ '/' | prepend: site.baseurl | prepend: site.url }}'>
-      <img class='logo' src='{{ '/assets/logo.png' | prepend: site.baseurl | prepend: site.url }}'>
-    </a>
-    <h1 class='title expander closed'>+</h1>
-    <div class='links closed'>
-      <div class='container closed'>
-        <p class='title top'><a class='menu' href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">About</a></p>
-        <p class='title'><a class='menu' href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a></p>
-        <p class='title'><a class='menu' href="{{ '/code' | prepend: site.baseurl | prepend: site.url }}">Code</a></p>
-        <p class='title'><a class='menu' href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a></p>
-        <p class='title bottom'><a class='menu' href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Resume</a></p>
-      </div>
+  <body>
+    <div class='main'>
+      <div class='nav'>
+        <div class='menu'>
+          <a href='{{ '/' | prepend: site.baseurl | prepend: site.url }}'>
+            <img class='logo' src='{{ '/assets/logo.png' | prepend: site.baseurl | prepend: site.url }}'>
+          </a>
+          <h1 class='title expander closed'>+</h1>
+        </div>
+        <div class='links closed'>
+          <p class='title top'><a class='menu' href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">About</a></p>
+          <p class='title'><a class='menu' href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a></p>
+          <p class='title'><a class='menu' href="{{ '/code' | prepend: site.baseurl | prepend: site.url }}">Code</a></p>
+          <p class='title'><a class='menu' href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a></p>
+          <p class='title bottom'><a class='menu' href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Resume</a></p>
+        </div>
+      </div> 
     </div>
-  </div> 
-  <div class='separator'></div>
-</div>
-<div class='holder'>
-<div class='content'>
+    <div class='content'>
       {{ content }}
-      </div>
-      </div>
-      <footer>
-        {% include footer.html %}
-      </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const ANIMATION_LENGTH = 400;
-    let menuState = false;
-    let isRunning = false;
-    const links = document.getElementsByClassName('links')[0]; 
-    const container = document.getElementsByClassName('container')[0];
-    const expander = document.getElementsByClassName('expander')[0];
-    function flipState(state) {
-      return menuState ? false : true;
+    </div>
+    <footer>
+      {% include footer.html %}
+    </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ANIMATION_LENGTH = 400;
+  let menuState = false;
+  const links = document.getElementsByClassName('links')[0]; 
+  const expander = document.getElementsByClassName('expander')[0];
+  function flipState(state) {
+    return menuState ? false : true;
+  }
+  expander.addEventListener('click', (e) => {
+    if (e.target.classList.contains('closed')) {
+      e.target.classList.remove('closed');
+      e.target.classList.add('open');
+      links.classList.remove('closed')
+        links.classList.add('open');
+    } else {
+      e.target.classList.remove('open');
+      e.target.classList.add('closed');
+      links.classList.remove('open');
+      links.classList.add('closed');
     }
-    function animateOpen() {
-      isRunning = true;
-      setTimeout(() => {
-        isRunning = false;
-      }, 1000);
-      const args = Array.prototype.slice.call(arguments);
-      args.forEach((arg) => {
-        arg.classList.remove('animate-closed');
-      });
-      setTimeout(() => {
-        args.forEach((arg) => {
-          arg.classList.add('animate-open');
-          arg.classList.remove('closed');
-          arg.classList.add('open');
-        });
-      }, 0);
-    }
-    function animateClosed() {
-      isRunning = true;
-      setTimeout(() => {
-        isRunning = false;
-      }, 1000);
-      const args = Array.prototype.slice.call(arguments);
-      args.forEach((arg) => {
-        arg.classList.remove('animate-open');
-      });
-      setTimeout(() => {
-        args.forEach((arg) => {
-          arg.classList.add('animate-closed');
-          arg.classList.remove('open');
-          arg.classList.add('closed');
-        });
-      }, 0);
-    }
-    /*
-    if (window.matchMedia('(min-device-width: 800px)').matches) {
-      expander.addEventListener('mouseover', (e) => {
-        if (!menuState && !isRunning) {
-          menuState = flipState(menuState); 
-          animateOpen(links, container, expander);
-        } 
-      });
-    }
-    */  
-    expander.addEventListener('click', (e) => {
-      if (e.target.style.animationName === 'pulse') {
-        e.target.style.animationName = 'rotate-expander';
-      }
-      if (!isRunning) {
-        menuState = flipState(menuState); 
-        if (menuState) {
-          animateOpen(links, container, expander);
-        } else {
-          animateClosed(links, container, expander);
-        }
-      }
-    });
   });
-</script>
-      <script async defer src="https://www.recurse-scout.com/loader.js?t=3a2b9d9ef554dd4a4a16055f3057c0b9"></script>
-    </body>        
+});
+    </script>
+    <script async defer src="https://www.recurse-scout.com/loader.js?t=3a2b9d9ef554dd4a4a16055f3057c0b9"></script>
+  </body>        
 </html>

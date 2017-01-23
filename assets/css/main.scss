@@ -8,7 +8,7 @@ $menu-back-color: #4C6D63;
 $other-1: #8B9993;
 $other-2: #57F2B6;
 $text-color: #4D4D4D;
-$animation-speed: 0.2s;
+$animation-speed: 0.6s;
 
 body {
   margin: 0px;
@@ -25,20 +25,16 @@ div {
   margin: 0px;
 }
 
-div.holder {
-  padding-left: 132px;
-  padding-bottom: 102px; 
-  min-width: 100%;
-  min-height: 100%;
-  background-color: $main-back-color;
-}
-
 div.content {
+  min-width: 100vw;
+  min-height: 100vh;
+  margin-top: 14vh;
   padding: 20px;
   padding-top: 45px;
   padding-left: 125px;
   padding-right: 125px;
   font-family: 'Heebo', sans-serif;
+  background-color: $main-back-color;
   color: $text-color;
 }
 img {
@@ -53,11 +49,14 @@ img {
   max-width: 100%;
 }
 img.logo {
+  display: block;
+  position: absolute;
+  margin: 0;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
   border: 0px;
-}
-img.social-link {
-  border: 0;
-  width: 48px;
+  height: 10vh;
 }
 
 pre.highlight {
@@ -94,7 +93,6 @@ hr {
   background: white;
   height: 3px;
 }
-
 h1 {
   margin-top: 0px;  
 }
@@ -104,30 +102,19 @@ h1, h2, h3, h4, h5, h6 {
 div.main {
   font-family: 'Fira Mono', monospace; 
   position: fixed;
-  width: 132px;
-  height: 100vh;
-}
-
-div.menu {
-  float: left;
-  width: 120px;
-  height: 100%;
-  padding: 7px;
-  padding-right: 11px;
-  background-color: $menu-back-color;
-}
-
-div.separator {
-  float: left;
-  width: 12px;
-  height: 100%;
-  background-color: white;
-}
-
-div.splitter {
   width: 100%;
-  height: 12px;
-  background-color: white;
+  top: 0;
+  left: 0;
+}
+
+div.nav {
+  width: 100%;
+  background-color: $menu-back-color;
+  border-bottom: 1vh solid white;
+}
+div.menu {
+  position: relative;
+  height: 13vh;
 }
 
 div.nav-link {
@@ -147,45 +134,6 @@ div.blog-nav {
   text-align: center;
 }
 
-@keyframes show-links {
-  from {
-    opacity: 0;
-    max-height: 0px;
-    height: 0px;
-    visibility: hidden;
-  }
-  to {
-    max-height: 145px;
-    height: 145px;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes show-container {
-  from {
-    width: 0%;
-    left: 0%;
-    right: 0%;
-  }
-  to {
-    width: 100%;
-    left: 0%;
-    right: 100%;
-  }
-}
-
-@keyframes rotate-expander {
-  from {
-    transform: rotate(0deg);
-    color: $emph-back-color;
-  }
-  to {
-    transform: rotate(45deg);
-    color: $other-1;
-  }
-}
-
 @keyframes pulse {
   0% {
     color: $emph-back-color;
@@ -198,12 +146,17 @@ div.blog-nav {
   }
 }
 
-
 .expander {
-  display: inline-block;
-  font-size: 300%; 
-  line-height: 35px;
+  display: block;
+  position: absolute;
+  font-size: 500%; 
   font-weight: 100;
+  right: 2%;
+  top: 50%;
+  transform-origin: top;
+}
+.expander:hover {
+  cursor: pointer; 
 }
 
 h1.title, h2.title {
@@ -217,29 +170,12 @@ h2.title {
 a {
   color: $menu-back-color;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
-@keyframes link-color {
-  from {
-    color: $menu-back-color;
-  }
-  to {
-    color: $other-1;
-  }
-}
-
-@keyframes menu-link-color {
-  from {
-    color: $other-1;
-  }
-  to {
-    color: $emph-back-color;
-  }
-}
 a:hover {
   color: $other-1;
-  animation-name: link-color;
-  animation-duration: 0.2s;
+  transition: color 0.2s;
 }
 
 a.menu {
@@ -252,11 +188,8 @@ a.menu:hover {
 }
 
 p.title {
-  padding-left: 6px;
-}
-
-p.title.top {
-  padding-top: 10px;
+  padding-right: 1.5vw;
+  padding-top: 1.5vh;
 }
 
 p.title.bottom {
@@ -264,273 +197,78 @@ p.title.bottom {
 }
 
 .expander.open {
-  transform: rotate(45deg);
   color: $other-1;
+  transform: rotate(45deg) translateY(-50%);
+  transition: transform $animation-speed;
 }
 
 .expander.closed {
   animation-name: pulse;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+  transform: rotate(0deg) translateY(-50%);
+  transition: transform $animation-speed;
 }
-.expander.animate-open {
-  animation-name: rotate-expander;
-  animation-duration: $animation-speed;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-
-.expander.animate-closed {
-  animation-name: rotate-expander;
-  animation-duration: $animation-speed;
-  animation-fill-mode: forwards;
-  animation-direction: reverse;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
-}
-
-div.container {
-  position: relative;
-  width: 100%;
-  height: inherit;
-  overflow: hidden;
-  margin-left: 2px;
-}
-
-div.container:before, div.container:after {
-  content: "";
-  background: $emph-back-color;
+div.links::before {
+  content: '';
   position: absolute;
-  height: 4px;
+  height: 0.5vh;
+  left: 0;
+  background: $emph-back-color;
 }
 
-div.container:after {
-  bottom: 0;
+div.links.open::before {
+  width: 100vw;
+  transition: 
+    right $animation-speed,
+    width $animation-speed,
 }
-
-div.container.open:before, div.container.open:after {
-  width: 100%;
-  left: 0%;
-  right: 100%;
+div.links.closed::before {
+  width: 0vw;
+  transition: 
+    right $animation-speed,
+    width $animation-speed;
 }
-
-div.container.closed:before, div.container.closed:after {
-  width: 0%;
-  left: 0%;
-  right: 0%;
-}
-
-div.container.animate-open:before, div.container.animate-open:after {
-  animation-name: show-container;
-  animation-duration: $animation-speed;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-
-div.container.animate-closed:before, div.container.animate-closed:after {
-  animation-name: show-container;
-  animation-duration: $animation-speed;
-  animation-fill-mode: forwards;
-  animation-direction: reverse;
-  animation-timing-function: linear;
-}
-
-div.links.animate-open {
-  animation-name: show-links;
-  animation-duration: $animation-speed;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-
-div.links.animate-closed {
-  animation-name: show-links;
-  animation-duration: $animation-speed;
-  animation-fill-mode: forwards;
-  animation-direction: reverse;
-  animation-timing-function: linear;
+div.links {
+  margin-right: 2%;
+  text-align: right;
 }
 
 div.links.closed {
   opacity: 0;
-  max-height: 0px;
-  height: 0px;
   visibility: hidden;
+  max-height: 0vh;
+  transition: 
+    visibility $animation-speed,
+    opacity $animation-speed,
+    max-height $animation-speed
 }
 
 div.links.open {
   opacity: 1;
-  max-height: 145px;
-  height: 145px;
-  visibility: visible;
+  visibility: visible; 
+  max-height: 86vh;
+  transition: 
+    visibility $animation-speed,
+    opacity $animation-speed,
+    max-height $animation-speed,
 }
-
-div.rc-scout {
+.social-link {
   display: inline-block;
-  position: relative;
-  top: 4px;
-  width: 48px;
-  height: 60px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 1vh;
 }
-
-div.footer-content {
-  padding-left: 132px;
+div.rc-scout {
+  position: absolute;
+  height: 6vh;
 }
-
 footer {
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 102px;
-  line-height: 142px;
+  border-top: 1vh solid white;
+  height: 6vh;
   text-align: center;
   background-color: $emph-back-color;
+  font-family: 'Fira Mono', monospace; 
 }
-
-div.social-link {
-  margin-left: 5px;
-  margin-right: 5px;
-  display: inline-block;
-}
-
-@media (max-device-width: 800px) {
-  img.logo {
-    height: 125px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: inline;
-    vertical-align: middle;
-  }
-  div.main {
-    width: 100%;        
-    height: auto;
-  }
-  div.menu {
-    width: 100%;
-    min-height: 179px;
-    max-height: 579px;
-    padding-left: 80px;
-    padding-right: 80px;
-    float: none;
-  }
-  div.separator {
-   width: 100%; 
-   height: 12px;
-  }
-  div.links {
-    text-align: center;
-  } 
-  div.footer-content {
-    padding: 0px;
-  }
-  div.holder {
-    padding-left: 0px;
-    padding-bottom: 185px;
-    padding-top: 179px;
-  }
-  h2.title {
-    font-size: 60px;
-    padding: 10px;
-    line-height: 50px;
-  }
-  p.title.top {
-    padding-top: 17px;
-  }
-  .expander {
-    position: absolute;
-    right: 63px;
-    top: 83px;
-    font-size: 900%;
-  }
-  a.menu {
-    font-size: 260%;
-  }
-  div.links.open {
-    height: 340px;
-    max-height: 340px;
-  }
-  @keyframes show-links {
-  from {
-    opacity: 0;
-    max-height: 0px;
-    height: 0px;
-    visibility: hidden;
-  }
-  to {
-    max-height: 340px;
-    height: 340px;
-    opacity: 1;
-    visibility: visible;
-  }
-}
-@keyframes show-container {
-  from {
-    width: 0%;
-    right: 50%;
-    left: 50%;
-  }
-  to {
-    width: 100%;
-    right: 0%;
-    left: 0%;
-  }
-}
-
-div.container:after {
-  height: 0px;    
-}
-div.container:before {
-  height: 9px;
-}
-    div.container.open:before {
-      width: 100%;
-      right: 0%; 
-      left: 0%;
-    }
-    div.container.closed:before {
-      width: 0%;
-      left: 50%;
-      right: 50%;
-    }
-div.container.animate-open:before {
-  animation-name: show-container;
-  animation-duration: $animation-speed;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-
-div.container.animate-closed:before {
-  animation-name: show-container;
-  animation-duration: $animation-speed;
-  animation-fill-mode: backwards;
-  animation-timing-function: linear;
-}
-div.nav-link {
-  font-size: 200%;
-}
-div.content {
-  padding-top: 50px;
-}
-footer {
-  height: 185px;
-  line-height: 272px;
-}
-img.social-link {
-  width: 96px;
-}
-div.rc-scout {
-  transform: scale(2);
-  transform-origin: left;
-  top: -14px;
-}
-code {
-  font-size: 250%;
-  padding: 25px;
-}
-pre.highlight {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-} 
