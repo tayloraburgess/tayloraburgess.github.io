@@ -186,7 +186,7 @@ a.menu:hover {
 }
 
 p.title {
-  padding-right: 1.5vw;
+  padding-right: 3vh;
   padding-top: 1.5vh;
 }
 
@@ -210,25 +210,27 @@ p.title.bottom {
 div.links::before {
   content: '';
   position: absolute;
-  height: 0.5vh;
+  height: 1vh;
   left: 0;
-  background: $emph-back-color;
 }
 
 div.links.open::before {
   width: 100vw;
+  background: $emph-back-color;
   transition: 
     right $animation-speed,
-    width $animation-speed,
+    background $animation-speed,
+    width $animation-speed;
 }
 div.links.closed::before {
   width: 0vw;
+  background: white;
   transition: 
     right $animation-speed,
+    background $animation-speed,
     width $animation-speed;
 }
 div.links {
-  margin-right: 2%;
   text-align: right;
 }
 
@@ -236,20 +238,32 @@ div.links.closed {
   opacity: 0;
   visibility: hidden;
   max-height: 0vh;
+  box-shadow: 
+    inset 100vw 0 0 white,
+    inset 0vh 0 0 white, 
+    inset -100vw 0 0 white,
+    inset -100vw 0 0 white;
   transition: 
     visibility $animation-speed,
     opacity $animation-speed,
-    max-height $animation-speed
+    box-shadow $animation-speed,
+    max-height $animation-speed;
 }
 
 div.links.open {
   opacity: 1;
   visibility: visible; 
   max-height: 86vh;
+  box-shadow: 
+    inset 1vh 0 0 white,
+    inset 65vw 0 0 $other-1, 
+    inset -1vh 0 0 white,
+    inset -2vh 0 0 $emph-back-color;
   transition: 
     visibility $animation-speed,
     opacity $animation-speed,
-    max-height $animation-speed,
+    box-shadow $animation-speed,
+    max-height $animation-speed;
 }
   
 div.rc-scout {
