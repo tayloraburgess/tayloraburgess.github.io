@@ -28,11 +28,8 @@ body {
 div.content {
   width: 100vw;
   min-height: 100vh;
-  margin: 14vh 0 6vh 0;
-  padding: 20px;
-  padding-top: 45px;
-  padding-left: 125px;
-  padding-right: 125px;
+  margin: 0;
+  padding: 17vh 16vw 9vh 16vw;
   font-family: 'Heebo', sans-serif;
   background-color: $main-back-color;
   color: $text-color;
@@ -67,6 +64,7 @@ code, blockquote {
 }
 table {
   border-collapse: collapse;
+  max-width: 100%;
   width: 100%;
 }
 td {
