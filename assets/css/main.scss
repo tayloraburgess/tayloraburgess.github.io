@@ -314,4 +314,18 @@ footer {
     padding-left: 5vw;
     padding-right: 5vw;
   }
+  div.landing-content {
+    float: none;
+    width: 100%;
+  }
+  div.landing-image-container {
+    float: none;
+    width: 100%;
+    border: 0;
+  }
+  .landing-image {
+    border: 1vh solid white;
+    float: none;
+    margin: auto;
+  }
 }
