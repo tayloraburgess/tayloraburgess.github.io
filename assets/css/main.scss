@@ -17,7 +17,7 @@ body {
   height: 100vh;
 }
 
-div {
+* {
   box-sizing: border-box;
 }
 
@@ -28,7 +28,7 @@ div {
 div.content {
   min-width: 100vw;
   min-height: 100vh;
-  margin-top: 14vh;
+  margin: 14vh 0 6vh 0;
   padding: 20px;
   padding-top: 45px;
   padding-left: 125px;
@@ -43,9 +43,7 @@ img {
   margin-top: 8px;
   margin-bottom: 8px;
   text-align: center;
-  border: solid;
-  border-color: white;
-  border-width: 3px;
+  border: 1vh solid white;
   max-width: 100%;
 }
 img.logo {
@@ -253,16 +251,34 @@ div.links.open {
     opacity $animation-speed,
     max-height $animation-speed,
 }
+  
+div.rc-scout {
+  height: 11vh;
+  margin: 0 auto;
+  padding-top: 2vh;
+}
+.break {
+  border-bottom: 1vh solid white;
+}
+.landing-content {
+  float: left;
+  width: 49%;
+  height: 100%;
+  padding: 0 2% 0.5% 0%;
+}
+.landing-image {
+  float: right;
+  width: 49%;
+  height: 100%;
+}
+.clearfix {
+  clear: both;
+}
 .social-link {
   display: inline-block;
-  margin: 1vh;
-}
-div.rc-scout {
-  position: absolute;
-  height: 6vh;
+  padding: 1vh;
 }
 footer {
-  box-sizing: border-box;
   position: fixed;
   bottom: 0;
   width: 100%;
