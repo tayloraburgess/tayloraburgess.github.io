@@ -27,7 +27,7 @@ body {
 
 div.content {
   width: 100vw;
-  min-height: 80vh;
+  min-height: 100vh;
   margin: 14vh 0 6vh 0;
   padding: 20px;
   padding-top: 45px;
@@ -308,4 +308,10 @@ footer {
   text-align: center;
   background-color: $emph-back-color;
   font-family: 'Fira Mono', monospace; 
+}
+@media (max-width: 750px) {
+  div.content {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
 }
