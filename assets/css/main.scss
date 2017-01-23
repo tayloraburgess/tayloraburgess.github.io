@@ -150,6 +150,7 @@ div.blog-nav {
   right: 2%;
   top: 50%;
   transform-origin: top;
+  user-select: none;
 }
 .expander:hover {
   cursor: pointer; 
