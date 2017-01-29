@@ -1,7 +1,7 @@
 ---
 ---
 
-$main-back-color: #C7C7C7;
+$main-back-color: rgb(222, 222, 222);
 $emph-back-color: #001E13;
 $emph-color-lighter: #003824;
 $menu-back-color: #4C6D63;
@@ -30,7 +30,8 @@ div.content {
     min-height: 100vh;
     margin: 0;
     padding: 20vh 16vw 11vh 16vw;
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    letter-spacing: 0.05em;
     background-color: $main-back-color;
     color: $text-color;
 }
@@ -71,8 +72,8 @@ blockquote {
 blockquote::before {
     content: '\201C';
     position: absolute;
-    left: -40px;
-    top: -22px;
+    left: -37px;
+    top: -19px;
     font-size: 3.5em;
     color: white;
 }
