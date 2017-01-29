@@ -44,7 +44,10 @@ img {
     border: 1vh solid white;
     max-width: 100%;
 }
-.logo {
+a.logo {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+img.logo {
     display: block;
     position: absolute;
     margin: 0;
@@ -72,9 +75,9 @@ blockquote {
 blockquote::before {
     content: '\201C';
     position: absolute;
-    left: -37px;
-    top: -19px;
-    font-size: 3.5em;
+    left: -34px;
+    top: -10px;
+    font-size: 3em;
     color: white;
 }
 table {
@@ -104,7 +107,7 @@ li {
 li::before {
     content: '>';
     position: absolute;
-    left: -20px;
+    left: -23px;
     color: white;
 }
 
@@ -124,6 +127,10 @@ h1 {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fira Mono', monospace; 
+    overflow-x: scroll;
+}
+p {
+    overflow-x: scroll;
 }
 div.main {
     font-family: 'Fira Mono', monospace; 
@@ -181,7 +188,11 @@ div.blog-nav {
     right: 2%;
     top: 50%;
     transform-origin: top;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 .expander:hover {
     cursor: pointer; 
