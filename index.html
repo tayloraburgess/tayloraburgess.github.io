@@ -13,10 +13,20 @@ permalink: /
     <img src='assets/photo.jpg' class='landing-image'></img>
   </div>
 </div>
-<h2 class='front-blog'>Last Blog Post: {{ site.posts[0].title }}</h2>
-<p>{{ site.posts[0].date | date: "%b %-d, %Y" }}</p>
-<p>{{ site.posts[0].content }}</p>
-
-
 <div class='rc-scout'></div>
+<h2 class='front-blog'>Last Blog Post: {{ site.posts[0].title }}</h2>
+<h4>{{ site.posts[0].date | date: "%b %-d, %Y" }}</h4>
+<div>
+  {{ site.posts[0].content }}
+  <h3>Tags: {{ site.posts[0].tags | array_to_sentence_string }}</h3>
+</div>
+
+<div class='blog-nav'>
+  <div class='nav-link left'>
+    <h4><a href="{{ site.posts[0].previous.url | prepend: site.baseurl | prepend: site.url }}">Previous</a></h4>
+  </div>
+  <div class='nav-link'><h4><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }} ">Archive</a></h4></div>
+  <div class='nav-link right'>
+  </div>
+</div>
 <script async defer src="https://www.recurse-scout.com/loader.js?t=3a2b9d9ef554dd4a4a16055f3057c0b9"></script>
