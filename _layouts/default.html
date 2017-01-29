@@ -30,13 +30,8 @@
     </footer>
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const ANIMATION_LENGTH = 400;
-  let menuState = false;
   const links = document.getElementsByClassName('links')[0]; 
   const expander = document.getElementsByClassName('expander')[0];
-  function flipState(state) {
-    return menuState ? false : true;
-  }
   expander.addEventListener('click', (e) => {
     if (e.target.classList.contains('closed')) {
       e.target.classList.remove('closed');
