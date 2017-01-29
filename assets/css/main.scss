@@ -29,7 +29,7 @@ div.content {
   width: 100vw;
   min-height: 100vh;
   margin: 0;
-  padding: 17vh 16vw 9vh 16vw;
+  padding: 20vh 16vw 11vh 16vw;
   font-family: 'Heebo', sans-serif;
   background-color: $main-back-color;
   color: $text-color;
@@ -43,7 +43,7 @@ img {
   border: 1vh solid white;
   max-width: 100%;
 }
-img.logo {
+.logo {
   display: block;
   position: absolute;
   margin: 0;
@@ -51,7 +51,10 @@ img.logo {
   top: 50%;
   transform: translateY(-50%);
   border: 0px;
-  height: 10vh;
+  height: 11.9vh;
+}
+path#path30 {
+    fill: white;
 }
 
 pre.highlight {
@@ -116,7 +119,7 @@ div.nav {
 }
 div.menu {
   position: relative;
-  height: 13vh;
+  height: 14vh;
 }
 
 div.nav-link {
