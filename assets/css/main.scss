@@ -51,7 +51,7 @@ img.logo {
     display: block;
     position: absolute;
     margin: 0;
-    left: 2%;
+    left: 3%;
     top: 50%;
     transform: translateY(-50%);
     border: 0px;
@@ -163,7 +163,6 @@ div.nav-link.left {
 div.nav-link.right {
     text-align: right;
 }
-
 div.blog-nav {
     text-align: center;
 }
@@ -183,21 +182,53 @@ div.blog-nav {
 .expander {
     display: block;
     position: absolute;
-    font-size: 500%; 
-    font-weight: 100;
-    right: 2%;
+    right: 3%;
     top: 50%;
+    width: 5vh;
+    height: 5vh;
+    font-weight: 100;
     transform-origin: top;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
+.expander::before, .expander::after {
+    content: '';
+    position: absolute;
+}
+.expander::before {
+    width: 1vh;
+    height: 5vh;
+    left: 2vh;
+    top: 0;
+}
+.expander::after {
+    width: 5vh;
+    height: 1vh;
+    left: 0;
+    top: 2vh;
+}
+.expander.open::before, .expander.open::after {
+    background: $other-1;
+}
+.expander.closed::before, .expander.closed::after {
+    background: $emph-back-color;
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
 .expander:hover {
     cursor: pointer; 
 }
 
+.expander.open {
+    transform: rotate(45deg) translateY(-50%);
+    transition: transform $animation-speed;
+}
+
+.expander.closed {
+    transform: rotate(0deg) translateY(-50%);
+    transition: transform $animation-speed;
+}
 h1.title, h2.title {
     color: $emph-back-color;
 }
@@ -235,19 +266,7 @@ p.title.bottom {
     padding-bottom: 10px;
 }
 
-.expander.open {
-    color: $other-1;
-    transform: rotate(45deg) translateY(-50%);
-    transition: transform $animation-speed;
-}
 
-.expander.closed {
-    animation-name: pulse;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    transform: rotate(0deg) translateY(-50%);
-    transition: transform $animation-speed;
-}
 div.links::before {
     content: '';
     position: absolute;
