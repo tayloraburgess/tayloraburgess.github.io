@@ -131,9 +131,11 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Fira Mono', monospace; 
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 p {
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 div.main {
     font-family: 'Fira Mono', monospace; 
