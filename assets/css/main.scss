@@ -35,6 +35,9 @@ div.content {
     background-color: $main-back-color;
     color: $text-color;
 }
+.content p, .content blockquote, .content ul, .content ol {
+    line-height: 180%;
+}
 img {
     display: block;
     margin: 0 auto;
@@ -76,7 +79,7 @@ blockquote::before {
     content: '\201C';
     position: absolute;
     left: -34px;
-    top: -10px;
+    top: 8px;
     font-size: 3em;
     color: white;
 }
