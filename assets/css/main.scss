@@ -174,13 +174,13 @@ div.blog-nav {
 
 @keyframes pulse {
     0% {
-        color: $emph-back-color;
+        background: $emph-back-color;
     } 
     50% {
-        color: $emph-color-lighter;
+        background: $emph-color-lighter;
     }
     100% {
-        color: $emph-back-color;
+        background: $emph-back-color;
     }
 }
 
