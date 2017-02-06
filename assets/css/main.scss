@@ -254,23 +254,20 @@ a:hover {
 }
 
 a.menu {
+    display: block;
+    padding-right: 3vh;
+    padding-top: 1.5vh;
     color: $other-1;
+    margin: 0;
 }
 
+a.menu:last-child {
+    padding-bottom: 10px;
+}
 a.menu:hover {
     color: $emph-back-color;
     animation-name: menu-link-color;
 }
-
-p.title {
-    padding-right: 3vh;
-    padding-top: 1.5vh;
-}
-
-p.title.bottom {
-    padding-bottom: 10px;
-}
-
 
 div.links::before {
     content: '';
