@@ -231,13 +231,13 @@ h2.title {
 }
 
 a {
-    color: $menu-back-color;
+    color: $other-1;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 a:hover {
-    color: $other-1;
+    color: $menu-back-color;
     transition: color 0.2s;
 }
 
@@ -245,7 +245,6 @@ a.menu {
     display: block;
     padding-right: calc(3% + 0.5vh);
     padding-top: 1.5vh;
-    color: $other-1;
     margin: 0;
 }
 
@@ -258,16 +257,21 @@ a.menu:last-child {
 }
 a.menu:hover {
     color: $emph-back-color;
-    animation-name: menu-link-color;
 }
 
 .closed a {
   opacity: 0;
-  transition: opacity $animation-speed; 
+  color: $main-back-color;
+  transition: 
+    opacity $animation-speed,
+    color 0.2s;
 }
 .open a {
   opacity: 1;
-  transition: opacity $animation-speed;
+  color: $other-1;
+  transition: 
+    opacity $animation-speed,
+    color 0.2s;
 }
 div.links::before {
     content: '';
@@ -286,7 +290,7 @@ div.links.open::before {
 }
 div.links.closed::before {
     width: 0vw;
-    background: white;
+    background: $main-back-color;
     transition: 
     right $animation-speed,
     background $animation-speed,
@@ -358,6 +362,10 @@ div.rc-scout {
 .social-link {
     display: inline-block;
     padding: 1vh;
+    color: $menu-back-color;
+}
+.social-link:hover {
+  color: $main-back-color;
 }
 footer {
     position: fixed;
