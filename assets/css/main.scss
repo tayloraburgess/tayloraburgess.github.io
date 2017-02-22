@@ -249,8 +249,12 @@ a.menu {
     margin: 0;
 }
 
+a.menu:first-child {
+  padding-top: 2.5vh;
+}
+
 a.menu:last-child {
-    padding-bottom: 10px;
+    padding-bottom: 1.5vh;
 }
 a.menu:hover {
     color: $emph-back-color;
