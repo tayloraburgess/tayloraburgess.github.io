@@ -69,8 +69,7 @@ pre.highlight {
     border: 0 solid $menu-back-color;
     border-width: 0 1vh 0 1vh;
     font-family: 'Fira Mono', monospace; 
-}
-blockquote {
+} blockquote {
     position: relative;
 }
 blockquote::before {
@@ -300,6 +299,62 @@ div.links {
     text-align: right;
 }
 
+.albums {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.album {
+  width: 30vw;
+  height: 30vw;
+  margin: 2.5vh 0 2.5vh 0;
+  display: inline-block;
+}
+
+.album > div {
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  transition: transform 0.5s;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.album:hover > div, album:focus > div {
+  transform: rotateY(180deg);
+}
+
+.album > div > img {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 30vw;
+  height: 30vw;
+  margin: 0;
+  backface-visibility: hidden;
+}
+
+.album > div > div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 1;
+  width: 30vw;
+  height: 30vw;
+  padding: 2vh;
+  transform: rotateY(180deg);
+  border: 1vh solid $emph-back-color;
+  background: $main-back-color; 
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.album > div > div p {
+  margin: 5px;
+}
+
 div.links.closed {
     visibility: hidden;
     max-height: 0vh;
@@ -378,11 +433,29 @@ footer {
     background-color: $emph-back-color;
     font-family: 'Fira Mono', monospace; 
 }
-@media (max-width: 1000px) {
-  div.content {
-        margin-left: calc(3% + 0.5vh);
+@media (max-width: 1024px) {
+  div.content { margin-left: calc(3% + 0.5vh);
         margin-right: calc(3% + 0.5vh);
         width: calc(100vw - (6% + 1vh));
+    }
+    .album {
+      width: 75vw;
+      height: 75vw;
+    }
+    .album > div {
+      width: 75vw;
+      height: 75vw;
+    }
+    .album > div > img {
+      width: 75vw;
+      height: 75vw;
+    }
+    .album > div > div {
+      width: 75vw;
+      height: 75vw;
+    }
+    .albums {
+      justify-content: space-around;
     }
 }
 @media (max-width: 750px) {
@@ -400,6 +473,12 @@ footer {
         float: none;
         margin: auto;
     }
+}
+
+@media (max-width: 415px) {
+  .album > div > div {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 750px) and (max-height: 450px) {
