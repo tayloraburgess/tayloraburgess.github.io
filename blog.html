@@ -8,7 +8,7 @@ title: Blog Archive
   {% assign sortedtags = site.tags | sort %}
   {% for tag in sortedtags %}
     {% assign tagname = tag | first %}
-      <h3>{{ tagname }}</h3>
+      <h3 class='tag-or-year'>{{ tagname }}</h3>
       <ul>
         {% for post in site.posts %}
           {% if post.tags contains tagname %}
@@ -22,10 +22,19 @@ title: Blog Archive
   	{% capture currentyear %}{{post.date | date: "%Y"}}{% endcapture %}
   	{% if currentyear != year %}
     	{% unless forloop.first %}</ul>{% endunless %}
-    	<h3>{{ currentyear }}</h3>
+    	<h3 class='tag-or-year'>{{ currentyear }}</h3>
     	<ul class="posts">
     	{% capture year %}{{currentyear}}{% endcapture %} 
   	{% endif %}
     <li>{{ post.date | date: "%b %d" }} - <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
   {% endfor %}
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  Array.prototype.slice.call(document.getElementsByClassName('tag-or-year')).forEach(element => {
+    element.addEventListener('click', () => {
+      element.classList.toggle('show')
+    });
+  });
+});
+</script>
