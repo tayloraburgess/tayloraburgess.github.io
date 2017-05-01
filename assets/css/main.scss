@@ -65,11 +65,12 @@ path#path30 {
 figure.highlight {
     overflow-x: scroll;
     margin: 1vh 0;
-    background: $main-back-color;
+    background: $emph-back-color;
     padding: 0 1em;
     border: 0 solid $menu-back-color;
     border-width: 0 1vh 0 1vh;
     font-family: 'Fira Mono', monospace; 
+    font-weight: 100;
 } blockquote {
     position: relative;
 }

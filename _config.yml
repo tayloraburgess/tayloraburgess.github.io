@@ -6,6 +6,8 @@ author: Taylor Burgess
 
 permalink: pretty
 
+highlighter: rouge
+
 exclude: 
   - CNAME
   - Gemfile

@@ -8,4 +8,5 @@ gem 'github-pages', versions['github-pages']
 gem 'rake'
 gem 'jekyll-watch'
 gem 'jekyll-feed'
-gem 'pygments.rb'
+gem 'json', '1.8.6'
+gem 'rouge'
