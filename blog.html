@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Blog Archive
+permalink: /blog/
 ---
-<div class="page-content wc-container">
+<div>
   <h1>Blog Archive</h1>
   <h2>Tags</h2>
   {% assign sortedtags = site.tags | sort %}
@@ -29,12 +30,6 @@ title: Blog Archive
     <li>{{ post.date | date: "%b %d" }} - <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
   {% endfor %}
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  Array.prototype.slice.call(document.getElementsByClassName('tag-or-year')).forEach(element => {
-    element.addEventListener('click', () => {
-      element.classList.toggle('show')
-    });
-  });
-});
+<script type="text/javascript">
+  {% include blog.js %}
 </script>

@@ -1,0 +1,13 @@
+.tag-or-year {
+  cursor: pointer;
+  text-indent: 15px;
+  color: $other-1;
+}
+
+.tag-or-year + ul {
+  display: none;
+}
+
+.tag-or-year.show + ul {
+  display: block;
+}
