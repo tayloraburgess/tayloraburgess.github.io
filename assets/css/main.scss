@@ -2,6 +2,10 @@
 ---
 
 @import "vars";
+@import "menu";
+@import "footer";
+@import "post";
+@import "index";
 @import "audio";
 @import "blog";
 
@@ -27,28 +31,6 @@ h1 {
 p {
   overflow-x: scroll;
   overflow-y: hidden;
-}
-
-footer {
-  position: fixed;
-  z-index: 3;
-  bottom: 0;
-  width: 100%;
-  border-top: 1vh solid $light-green;
-  height: 6vh;
-  text-align: center;
-  background-color: $dark-green;
-  font-family: 'Fira Mono', monospace; 
-
-  a {
-    display: inline-block;
-    padding: 1vh;
-    color: $light-green;
-
-    &:hover {
-      color: $light-gray;
-    }
-  }
 }
 
 a {
@@ -83,6 +65,17 @@ blockquote {
     font-size: 3em;
     color: $dark-green;
   }
+}
+
+figure.highlight {
+  overflow-x: scroll;
+  margin: 1vh 0;
+  background: $dark-green;
+  padding: 0 1em;
+  border: 0 solid $light-green;
+  border-width: 0 1vh 0 1vh;
+  font-family: 'Fira Mono', monospace; 
+  font-weight: 100;
 }
 
 table {
@@ -125,6 +118,14 @@ hr {
   height: 1vh;
 }
 
+.clearfix::after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+
 .content {
   width: 72vw;
   min-height: 77vh;
@@ -140,283 +141,10 @@ hr {
   }
 }
 
-.logo {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-
-  img {
-    display: block;
-    position: absolute;
-    margin: 0;
-    left: calc(3% + 0.5vh);
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0px;
-    height: 7vh;
-  }
-}
-
-path#path30 {
-  fill: white;
-}
-
-figure.highlight {
-  overflow-x: scroll;
-  margin: 1vh 0;
-  background: $dark-green;
-  padding: 0 1em;
-  border: 0 solid $light-green;
-  border-width: 0 1vh 0 1vh;
-  font-family: 'Fira Mono', monospace; 
-  font-weight: 100;
-} 
-
-.front-blog {
-  margin-top: 4vh;
-  border-top: 1vh solid $light-gray;
-  padding-top: 4vh;
-} 
-
-.main {
-  font-family: 'Fira Mono', monospace; 
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
-
-.nav {
-  width: 100%;
-  border-bottom: 1vh solid $dark-green;
-}
-
-.menu {
-  position: relative;
-  height: 10vh;
-  background: $light-gray;
-}
-
-.nav-link {
-  display: inline-block;
-  width: 32%;
-
-  &.left {
-    text-align: left;
-  }
-
-  &.right {
-    text-align: right;
-  }
-}
-
-.blog-nav {
-  text-align: center;
-}
-
-@keyframes pulse {
-  0% {
-    background: $dark-green;
-  } 
-  50% {
-    background: $medium-green;
-  }
-  100% {
-    background: $dark-green;
-  }
-}
-
-.expander {
-  display: block;
-  position: absolute;
-  right: 3%;
-  top: 50%;
-  width: 5vh;
-  height: 5vh;
-  transform-origin: top;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-
-  img {
-    display: inline;
-    margin: 0;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    padding: .5vh;
-  }
-
-  &.closed::before, &.closed::after {
-    background: $dark-green;
-    animation-name: pulse;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-  }
-
-  &:hover {
-    cursor: pointer; 
-  }
-
-  &.open {
-    transform: rotate(45deg) translateY(-50%);
-    transition: transform $animation-speed;
-  }
-
-  &.closed {
-    transform: rotate(0deg) translateY(-50%);
-    transition: transform $animation-speed;
-  }
-}
-
-.links {
-  text-align: right;
-
-  a {
-    display: block;
-    padding-right: calc(3% + 0.5vh);
-    padding-top: 1.5vh;
-    margin: 0;
-
-    &:first-child {
-      padding-top: 2.5vh;
-    }
-
-    &:last-child {
-      padding-bottom: 1.5vh;
-    }
-  }
-
-  &.closed {
-    visibility: hidden;
-    max-height: 0vh;
-    background: $light-gray;
-    box-shadow: 
-    inset 100vw 0 0 $light-gray,
-    inset 0vh 0 0 $light-gray, 
-    inset -100vw 0 0 $light-gray;
-    transition: 
-    visibility $animation-speed,
-    box-shadow $animation-speed,
-    background $animation-speed,
-    max-height $animation-speed;
-
-    a {
-      opacity: 0;
-      color: $light-gray;
-      transition: 
-      opacity $animation-speed,
-      color 0.2s;
-    }
-
-    &::before {
-      width: 0vw;
-      background: $light-gray;
-      transition: 
-      right $animation-speed,
-      background $animation-speed,
-      width $animation-speed;
-    }
-  }
-
-  &.open {
-    visibility: visible; 
-    max-height: 90vh;
-    background: $light-green;
-    box-shadow: inset 65vw 0 0 $medium-gray; 
-    transition: 
-    visibility $animation-speed,
-    box-shadow $animation-speed,
-    background $animation-speed,
-    max-height $animation-speed;
-
-    a {
-      opacity: 1;
-      color: $medium-gray;
-      transition: 
-      opacity $animation-speed,
-      color 0.2s;
-
-      &:hover {
-        color: $dark-green;
-      }
-    }
-
-    &::before {
-      width: 100vw;
-      background: $dark-green;
-      transition: 
-      right $animation-speed,
-      background $animation-speed,
-      width $animation-speed;
-    }
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    height: 1vh;
-    left: 0;
-  }
-}
-
-.landing-content {
-  float: left;
-  width: 50%;
-  padding: 1% 3% 0% 0%;
-  border-top: 1vh solid $light-gray;
-}
-
-.landing-image-container {
-  float: left;
-  width: 50%;
-  border-bottom: 1vh solid $light-gray;
-
-  img {
-    float: left;
-    max-height: 38vh;
-    min-height: 20vh;
-    margin: 0;
-    border-bottom: 0;
-  }
-}
-
-.clearfix::after {
-  content: '';
-  display: block;
-  visibility: hidden;
-  height: 0;
-  clear: both;
-}
-
-
-
 @media (max-width: $large) {
   .content { 
     margin-left: calc(3% + 0.5vh);
     margin-right: calc(3% + 0.5vh);
     width: calc(100vw - (6% + 1vh));
-  }
-}
-
-@media (max-width: $medium) {
-  .landing-content {
-    float: none;
-    width: 100%;
-  }
-
-  .landing-image-container {
-    float: none;
-    width: 100%;
-    border: 0;
-
-    img {
-      border: 1vh solid $light-gray;
-      float: none;
-      margin: auto;
-    }
-  }
-}
-
-@media (max-width: $medium) and (max-height: $small) {
-  footer {
-    height: 8vh;
   }
 }

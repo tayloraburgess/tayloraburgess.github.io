@@ -1,0 +1,27 @@
+footer {
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  width: 100%;
+  border-top: 1vh solid $light-green;
+  height: 6vh;
+  text-align: center;
+  background-color: $dark-green;
+  font-family: 'Fira Mono', monospace; 
+
+  a {
+    display: inline-block;
+    padding: 1vh;
+    color: $light-green;
+
+    &:hover {
+      color: $light-gray;
+    }
+  }
+}
+
+@media (max-width: $medium) and (max-height: $small) {
+  footer {
+    height: 8vh;
+  }
+}
