@@ -14,14 +14,14 @@ body {
   background-color: $light-gray;
 }
 
-h1 {
-  margin-top: 0px;  
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Fira Mono', monospace; 
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+h1 {
+  margin-top: 0px;  
 }
 
 p {
@@ -39,12 +39,27 @@ footer {
   text-align: center;
   background-color: $dark-green;
   font-family: 'Fira Mono', monospace; 
+
+  a {
+    display: inline-block;
+    padding: 1vh;
+    color: $light-green;
+
+    &:hover {
+      color: $light-gray;
+    }
+  }
 }
 
 a {
   color: $medium-gray;
   text-decoration: none;
   transition: color 0.2s;
+
+  &:hover {
+    color: $light-green;
+    transition: color 0.2s;
+  }
 }
 
 img {
@@ -59,15 +74,15 @@ img {
 
 blockquote {
   position: relative;
-}
 
-blockquote::before {
-  content: '\201C';
-  position: absolute;
-  left: -34px;
-  top: 8px;
-  font-size: 3em;
-  color: $dark-green;
+  &::before {
+    content: '\201C';
+    position: absolute;
+    left: -34px;
+    top: 8px;
+    font-size: 3em;
+    color: $dark-green;
+  }
 }
 
 table {
@@ -95,23 +110,19 @@ ul {
 
 li {
   position: relative;
-}
 
-li::before {
-  content: '>';
-  position: absolute;
-  left: -23px;
-  color: $dark-green;
+  &::before {
+    content: '>';
+    position: absolute;
+    left: -23px;
+    color: $dark-green;
+  }
 }
 
 hr {
   border: 0;
   background: $light-gray;
   height: 1vh;
-}
-
-.title {
-  margin: 0px;
 }
 
 .content {
@@ -129,19 +140,19 @@ hr {
   }
 }
 
-a.logo {
+.logo {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-}
 
-img.logo {
-  display: block;
-  position: absolute;
-  margin: 0;
-  left: calc(3% + 0.5vh);
-  top: 50%;
-  transform: translateY(-50%);
-  border: 0px;
-  height: 7vh;
+  img {
+    display: block;
+    position: absolute;
+    margin: 0;
+    left: calc(3% + 0.5vh);
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0px;
+    height: 7vh;
+  }
 }
 
 path#path30 {
@@ -179,7 +190,7 @@ figure.highlight {
   border-bottom: 1vh solid $dark-green;
 }
 
-div.menu {
+.menu {
   position: relative;
   height: 10vh;
   background: $light-gray;
@@ -188,14 +199,14 @@ div.menu {
 .nav-link {
   display: inline-block;
   width: 32%;
-}
 
-.nav-link.left {
-  text-align: left;
-}
+  &.left {
+    text-align: left;
+  }
 
-.nav-link.right {
-  text-align: right;
+  &.right {
+    text-align: right;
+  }
 }
 
 .blog-nav {
@@ -255,56 +266,23 @@ div.menu {
   }
 }
 
-h1.title, h2.title {
-  color: $dark-green;
-}
-
-h2.title {
-  line-height: 30px;
-}
-
-a:hover {
-  color: $light-green;
-  transition: color 0.2s;
-}
-
-a.menu {
-  display: block;
-  padding-right: calc(3% + 0.5vh);
-  padding-top: 1.5vh;
-  margin: 0;
-}
-
-a.menu:first-child {
-  padding-top: 2.5vh;
-}
-
-a.menu:last-child {
-  padding-bottom: 1.5vh;
-}
-
-a.menu:hover {
-  color: $dark-green;
-}
-
-.closed a {
-  opacity: 0;
-  color: $light-gray;
-  transition: 
-  opacity $animation-speed,
-  color 0.2s;
-}
-
-.open a {
-  opacity: 1;
-  color: $medium-gray;
-  transition: 
-  opacity $animation-speed,
-  color 0.2s;
-}
-
 .links {
   text-align: right;
+
+  a {
+    display: block;
+    padding-right: calc(3% + 0.5vh);
+    padding-top: 1.5vh;
+    margin: 0;
+
+    &:first-child {
+      padding-top: 2.5vh;
+    }
+
+    &:last-child {
+      padding-bottom: 1.5vh;
+    }
+  }
 
   &.closed {
     visibility: hidden;
@@ -319,6 +297,14 @@ a.menu:hover {
     box-shadow $animation-speed,
     background $animation-speed,
     max-height $animation-speed;
+
+    a {
+      opacity: 0;
+      color: $light-gray;
+      transition: 
+      opacity $animation-speed,
+      color 0.2s;
+    }
 
     &::before {
       width: 0vw;
@@ -341,6 +327,18 @@ a.menu:hover {
     background $animation-speed,
     max-height $animation-speed;
 
+    a {
+      opacity: 1;
+      color: $medium-gray;
+      transition: 
+      opacity $animation-speed,
+      color 0.2s;
+
+      &:hover {
+        color: $dark-green;
+      }
+    }
+
     &::before {
       width: 100vw;
       background: $dark-green;
@@ -359,10 +357,6 @@ a.menu:hover {
   }
 }
 
-.break {
-  border-bottom: 1vh solid $light-gray;
-}
-
 .landing-content {
   float: left;
   width: 50%;
@@ -370,18 +364,18 @@ a.menu:hover {
   border-top: 1vh solid $light-gray;
 }
 
-.landing-image {
-  float: left;
-  max-height: 38vh;
-  min-height: 20vh;
-  margin: 0;
-  border-bottom: 0;
-}
-
 .landing-image-container {
   float: left;
   width: 50%;
   border-bottom: 1vh solid $light-gray;
+
+  img {
+    float: left;
+    max-height: 38vh;
+    min-height: 20vh;
+    margin: 0;
+    border-bottom: 0;
+  }
 }
 
 .clearfix::after {
@@ -392,17 +386,9 @@ a.menu:hover {
   clear: both;
 }
 
-.social-link {
-  display: inline-block;
-  padding: 1vh;
-  color: $light-green;
 
-  &:hover {
-    color: $light-gray;
-  }
-}
 
-@media (max-width: 1024px) {
+@media (max-width: $large) {
   .content { 
     margin-left: calc(3% + 0.5vh);
     margin-right: calc(3% + 0.5vh);
@@ -410,7 +396,7 @@ a.menu:hover {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: $medium) {
   .landing-content {
     float: none;
     width: 100%;
@@ -420,16 +406,16 @@ a.menu:hover {
     float: none;
     width: 100%;
     border: 0;
-  }
 
-  .landing-image {
-    border: 1vh solid $light-gray;
-    float: none;
-    margin: auto;
+    img {
+      border: 1vh solid $light-gray;
+      float: none;
+      margin: auto;
+    }
   }
 }
 
-@media (max-width: 750px) and (max-height: 450px) {
+@media (max-width: $medium) and (max-height: $small) {
   footer {
     height: 8vh;
   }
