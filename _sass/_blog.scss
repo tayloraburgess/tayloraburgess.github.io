@@ -1,13 +1,15 @@
-.tag-or-year {
-  cursor: pointer;
-  text-indent: 15px;
-  color: $medium-gray;
+.blog {
+  .tag-or-year {
+    cursor: pointer;
+    text-indent: 15px;
+    color: $medium-gray;
 
-  + ul {
-    display: none;
-  }
+    + ul {
+      display: none;
+    }
 
-  &.show + ul {
-    display: block;
+    &.show + ul {
+      display: block;
+    }
   }
 }

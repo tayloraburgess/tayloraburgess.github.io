@@ -18,10 +18,10 @@ footer {
       color: $light-gray;
     }
   }
-}
 
-@media (max-width: $medium) and (max-height: $small) {
-  footer {
+  @media (max-width: $medium) and (max-height: $small) {
     height: 8vh;
   }
 }
+
+

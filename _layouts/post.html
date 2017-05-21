@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div>
+<div class='post'>
 	<div>
 		<h1>{{ page.title }}</h1>
 		<h3>
@@ -14,7 +14,7 @@ layout: default
 		</div>
 	</div>
 
-	<div class='blog-nav'>
+	<div class='nav'>
 		<div>
 			{% if page.previous %}
       <h4><a href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}">Previous</a></h4>
