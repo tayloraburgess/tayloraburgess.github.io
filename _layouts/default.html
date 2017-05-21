@@ -32,24 +32,8 @@
     <footer>
       {% include footer.html %}
     </footer>
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const links = document.getElementsByClassName('links')[0]; 
-  const expander = document.getElementsByClassName('expander')[0];
-  expander.addEventListener('click', (e) => {
-    if (e.currentTarget.classList.contains('closed')) {
-      e.currentTarget.classList.remove('closed');
-      e.currentTarget.classList.add('open');
-      links.classList.remove('closed')
-        links.classList.add('open');
-    } else {
-      e.currentTarget.classList.remove('open');
-      e.currentTarget.classList.add('closed');
-      links.classList.remove('open');
-      links.classList.add('closed');
-    }
-  });
-});
+    <script type="text/javascript">
+      {% include main.js %}
     </script>
   </body>        
 </html>
