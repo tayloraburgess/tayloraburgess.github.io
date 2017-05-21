@@ -44,8 +44,8 @@
   height: 30vw;
   padding: 2vh;
   transform: rotateY(180deg);
-  border: 1vh solid $emph-back-color;
-  background: $main-back-color; 
+  border: 1vh solid $dark-green;
+  background: $light-gray; 
   text-align: center;
   backface-visibility: hidden;
 }
@@ -59,18 +59,22 @@
     width: 75vw;
     height: 75vw;
   }
+
   .album > div {
     width: 75vw;
     height: 75vw;
   }
+
   .album > div > img {
     width: 75vw;
     height: 75vw;
   }
+
   .album > div > div {
     width: 75vw;
     height: 75vw;
   }
+
   .albums {
     justify-content: space-around;
   }
