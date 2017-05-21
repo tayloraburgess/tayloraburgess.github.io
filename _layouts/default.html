@@ -9,29 +9,11 @@
     <title>tab</title>
   </head>
   <body>
-    <div class='menu'>
-      <div>
-        <div>
-          <a class='logo' href='{{ '/' | prepend: site.baseurl | prepend: site.url }}'>
-            <img src='{{ '/assets/logo.svg' | prepend: site.baseurl | prepend: site.url }}'>
-          </a>
-          <div class='expander closed'>
-            <img src='{{ '/assets/expander.svg' | prepend: site.baseurl | prepend: site.url }}'>
-          </div>
-        </div>
-        <div class='links closed'>
-          <a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog</a>
-          <a href="{{ '/audio' | prepend: site.baseurl | prepend: site.url }}">Audio</a>
-          <a href="{{ '/assets/resume.pdf' | prepend: site.baseurl | prepend: site.url }}">Résumé</a>
-        </div>
-      </div> 
-    </div>
+    {% include header.html %}
     <div class='content'>
       {{ content }}
     </div>
-    <footer>
-      {% include footer.html %}
-    </footer>
+    {% include footer.html %}
     <script type="text/javascript">
       {% include main.js %}
     </script>
