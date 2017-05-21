@@ -8,6 +8,7 @@
 @import "index";
 @import "audio";
 @import "blog";
+@import "resume";
 
 * {
   box-sizing: border-box;
@@ -117,7 +118,7 @@ li {
 hr {
   border: 0;
   background: $light-gray;
-  height: 1vh;
+  height: 0.5vh;
 }
 
 .clearfix::after {
