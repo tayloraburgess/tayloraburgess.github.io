@@ -2,12 +2,12 @@
   cursor: pointer;
   text-indent: 15px;
   color: $medium-gray;
-}
 
-.tag-or-year + ul {
-  display: none;
-}
+  + ul {
+    display: none;
+  }
 
-.tag-or-year.show + ul {
-  display: block;
+  &.show + ul {
+    display: block;
+  }
 }

@@ -9,74 +9,74 @@
   height: 30vw;
   margin: 2.5vh 0 2.5vh 0;
   display: inline-block;
-}
 
-.album > div {
-  position: relative;
-  width: 30vw;
-  height: 30vw;
-  transition: transform 0.5s;
-  transform: rotateY(0deg);
-  transform-style: preserve-3d;
-}
+  &:hover > div, &:focus > div {
+    transform: rotateY(180deg);
+  }
 
-.album:hover > div, album:focus > div {
-  transform: rotateY(180deg);
-}
+  > div {
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    transition: transform 0.5s;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
 
-.album > div > img {
-  position: absolute;
-  z-index: 2;
-  display: block;
-  width: 30vw;
-  height: 30vw;
-  margin: 0;
-  backface-visibility: hidden;
-}
+    > img {
+      position: absolute;
+      z-index: 2;
+      display: block;
+      width: 30vw;
+      height: 30vw;
+      margin: 0;
+      backface-visibility: hidden;
+    }
 
-.album > div > div {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  position: absolute;
-  z-index: 1;
-  width: 30vw;
-  height: 30vw;
-  padding: 2vh;
-  transform: rotateY(180deg);
-  border: 1vh solid $dark-green;
-  background: $light-gray; 
-  text-align: center;
-  backface-visibility: hidden;
-}
+    > div {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      position: absolute;
+      z-index: 1;
+      width: 30vw;
+      height: 30vw;
+      padding: 2vh;
+      transform: rotateY(180deg);
+      border: 1vh solid $dark-green;
+      background: $light-gray; 
+      text-align: center;
+      backface-visibility: hidden;
 
-.album > div > div p {
-  margin: 5px;
+      p {
+        margin: 5px;
+      }
+    }
+  }
 }
 
 @media (max-width: 1024px) {
+  .albums {
+    justify-content: space-around;
+  }
+
   .album {
     width: 75vw;
     height: 75vw;
-  }
 
-  .album > div {
-    width: 75vw;
-    height: 75vw;
-  }
+    > div {
+      width: 75vw;
+      height: 75vw;
 
-  .album > div > img {
-    width: 75vw;
-    height: 75vw;
-  }
+      > img {
+        width: 75vw;
+        height: 75vw;
+      }
 
-  .album > div > div {
-    width: 75vw;
-    height: 75vw;
-  }
-
-  .albums {
-    justify-content: space-around;
+      > div {
+        width: 75vw;
+        height: 75vw;
+      }
+    }
   }
 }
 

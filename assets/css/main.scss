@@ -5,32 +5,46 @@
 @import "audio";
 @import "blog";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px;
   background-color: $light-gray;
 }
 
-* {
-  box-sizing: border-box;
+h1 {
+  margin-top: 0px;  
 }
 
-.title {
-  margin: 0px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fira Mono', monospace; 
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-div.content {
-  width: 72vw;
-  min-height: 77vh;
-  margin: 14vh 14vw 9vh 14vw;
-  padding: 4vh 4vw;
-  font-family: 'Fira Sans', sans-serif;
-  letter-spacing: 0.05em;
-  background-color: white;
-  color: $dark-gray;
+p {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-.content p, .content blockquote, .content ul, .content ol {
-  line-height: 180%;
+footer {
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  width: 100%;
+  border-top: 1vh solid $light-green;
+  height: 6vh;
+  text-align: center;
+  background-color: $dark-green;
+  font-family: 'Fira Mono', monospace; 
+}
+
+a {
+  color: $medium-gray;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 img {
@@ -42,36 +56,6 @@ img {
   border: 1vh solid $light-gray;
   max-width: 100%;
 }
-
-a.logo {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-}
-
-img.logo {
-  display: block;
-  position: absolute;
-  margin: 0;
-  left: calc(3% + 0.5vh);
-  top: 50%;
-  transform: translateY(-50%);
-  border: 0px;
-  height: 7vh;
-}
-
-path#path30 {
-  fill: white;
-}
-
-figure.highlight {
-  overflow-x: scroll;
-  margin: 1vh 0;
-  background: $dark-green;
-  padding: 0 1em;
-  border: 0 solid $light-green;
-  border-width: 0 1vh 0 1vh;
-  font-family: 'Fira Mono', monospace; 
-  font-weight: 100;
-} 
 
 blockquote {
   position: relative;
@@ -120,34 +104,68 @@ li::before {
   color: $dark-green;
 }
 
-.front-blog {
-  margin-top: 4vh;
-  border-top: 1vh solid $light-gray;
-  padding-top: 4vh;
-} 
-
 hr {
   border: 0;
   background: $light-gray;
   height: 1vh;
 }
 
-h1 {
-  margin-top: 0px;  
+.title {
+  margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.content {
+  width: 72vw;
+  min-height: 77vh;
+  margin: 14vh 14vw 9vh 14vw;
+  padding: 4vh 4vw;
+  font-family: 'Fira Sans', sans-serif;
+  letter-spacing: 0.05em;
+  background-color: white;
+  color: $dark-gray;
+
+  p, blockquote, ul, ol {
+    line-height: 180%;
+  }
+}
+
+a.logo {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+
+img.logo {
+  display: block;
+  position: absolute;
+  margin: 0;
+  left: calc(3% + 0.5vh);
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0px;
+  height: 7vh;
+}
+
+path#path30 {
+  fill: white;
+}
+
+figure.highlight {
+  overflow-x: scroll;
+  margin: 1vh 0;
+  background: $dark-green;
+  padding: 0 1em;
+  border: 0 solid $light-green;
+  border-width: 0 1vh 0 1vh;
   font-family: 'Fira Mono', monospace; 
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
+  font-weight: 100;
+} 
 
-p {
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
+.front-blog {
+  margin-top: 4vh;
+  border-top: 1vh solid $light-gray;
+  padding-top: 4vh;
+} 
 
-div.main {
+.main {
   font-family: 'Fira Mono', monospace; 
   position: fixed;
   width: 100%;
@@ -156,7 +174,7 @@ div.main {
   z-index: 3;
 }
 
-div.nav {
+.nav {
   width: 100%;
   border-bottom: 1vh solid $dark-green;
 }
@@ -167,20 +185,20 @@ div.menu {
   background: $light-gray;
 }
 
-div.nav-link {
+.nav-link {
   display: inline-block;
   width: 32%;
 }
 
-div.nav-link.left {
+.nav-link.left {
   text-align: left;
 }
 
-div.nav-link.right {
+.nav-link.right {
   text-align: right;
 }
 
-div.blog-nav {
+.blog-nav {
   text-align: center;
 }
 
@@ -196,15 +214,6 @@ div.blog-nav {
   }
 }
 
-.expander img {
-  display: inline;
-  margin: 0;
-  border: 0;
-  width: 100%;
-  height: 100%;
-  padding: .5vh;
-}
-
 .expander {
   display: block;
   position: absolute;
@@ -214,27 +223,36 @@ div.blog-nav {
   height: 5vh;
   transform-origin: top;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-}
 
-.expander.closed::before, .expander.closed::after {
-  background: $dark-green;
-  animation-name: pulse;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
+  img {
+    display: inline;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    padding: .5vh;
+  }
 
-.expander:hover {
-  cursor: pointer; 
-}
+  &.closed::before, &.closed::after {
+    background: $dark-green;
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
 
-.expander.open {
-  transform: rotate(45deg) translateY(-50%);
-  transition: transform $animation-speed;
-}
+  &:hover {
+    cursor: pointer; 
+  }
 
-.expander.closed {
-  transform: rotate(0deg) translateY(-50%);
-  transition: transform $animation-speed;
+  &.open {
+    transform: rotate(45deg) translateY(-50%);
+    transition: transform $animation-speed;
+  }
+
+  &.closed {
+    transform: rotate(0deg) translateY(-50%);
+    transition: transform $animation-speed;
+  }
 }
 
 h1.title, h2.title {
@@ -243,12 +261,6 @@ h1.title, h2.title {
 
 h2.title {
   line-height: 30px;
-}
-
-a {
-  color: $medium-gray;
-  text-decoration: none;
-  transition: color 0.2s;
 }
 
 a:hover {
@@ -291,65 +303,60 @@ a.menu:hover {
   color 0.2s;
 }
 
-div.links::before {
-  content: '';
-  position: absolute;
-  height: 1vh;
-  left: 0;
-}
-
-div.links.open::before {
-  width: 100vw;
-  background: $dark-green;
-  transition: 
-  right $animation-speed,
-  background $animation-speed,
-  width $animation-speed;
-}
-
-div.links.closed::before {
-  width: 0vw;
-  background: $light-gray;
-  transition: 
-  right $animation-speed,
-  background $animation-speed,
-  width $animation-speed;
-}
-
-div.links {
+.links {
   text-align: right;
-}
 
-div.links.closed {
-  visibility: hidden;
-  max-height: 0vh;
-  background: $light-gray;
-  box-shadow: 
-  inset 100vw 0 0 $light-gray,
-  inset 0vh 0 0 $light-gray, 
-  inset -100vw 0 0 $light-gray;
-  transition: 
-  visibility $animation-speed,
-  box-shadow $animation-speed,
-  background $animation-speed,
-  max-height $animation-speed;
-}
+  &.closed {
+    visibility: hidden;
+    max-height: 0vh;
+    background: $light-gray;
+    box-shadow: 
+    inset 100vw 0 0 $light-gray,
+    inset 0vh 0 0 $light-gray, 
+    inset -100vw 0 0 $light-gray;
+    transition: 
+    visibility $animation-speed,
+    box-shadow $animation-speed,
+    background $animation-speed,
+    max-height $animation-speed;
 
-div.links.open {
-  visibility: visible; 
-  max-height: 90vh;
-  background: $light-green;
-  box-shadow: inset 65vw 0 0 $medium-gray; 
-  transition: 
-  visibility $animation-speed,
-  box-shadow $animation-speed,
-  background $animation-speed,
-  max-height $animation-speed;
-}
+    &::before {
+      width: 0vw;
+      background: $light-gray;
+      transition: 
+      right $animation-speed,
+      background $animation-speed,
+      width $animation-speed;
+    }
+  }
 
-div.rc-scout {
-  height: 5vh;
-  margin: 0 auto;
+  &.open {
+    visibility: visible; 
+    max-height: 90vh;
+    background: $light-green;
+    box-shadow: inset 65vw 0 0 $medium-gray; 
+    transition: 
+    visibility $animation-speed,
+    box-shadow $animation-speed,
+    background $animation-speed,
+    max-height $animation-speed;
+
+    &::before {
+      width: 100vw;
+      background: $dark-green;
+      transition: 
+      right $animation-speed,
+      background $animation-speed,
+      width $animation-speed;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 1vh;
+    left: 0;
+  }
 }
 
 .break {
@@ -377,7 +384,7 @@ div.rc-scout {
   border-bottom: 1vh solid $light-gray;
 }
 
-.clearfix:after {
+.clearfix::after {
   content: '';
   display: block;
   visibility: hidden;
@@ -389,40 +396,27 @@ div.rc-scout {
   display: inline-block;
   padding: 1vh;
   color: $light-green;
-}
 
-.social-link:hover {
-  color: $light-gray;
-}
-
-footer {
-  position: fixed;
-  z-index: 3;
-  bottom: 0;
-  width: 100%;
-  border-top: 1vh solid $light-green;
-  height: 6vh;
-  text-align: center;
-  background-color: $dark-green;
-  font-family: 'Fira Mono', monospace; 
+  &:hover {
+    color: $light-gray;
+  }
 }
 
 @media (max-width: 1024px) {
-  div.content { 
+  .content { 
     margin-left: calc(3% + 0.5vh);
     margin-right: calc(3% + 0.5vh);
     width: calc(100vw - (6% + 1vh));
   }
-
 }
 
 @media (max-width: 750px) {
-  div.landing-content {
+  .landing-content {
     float: none;
     width: 100%;
   }
 
-  div.landing-image-container {
+  .landing-image-container {
     float: none;
     width: 100%;
     border: 0;
