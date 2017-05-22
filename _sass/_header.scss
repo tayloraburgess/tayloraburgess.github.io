@@ -160,4 +160,8 @@ header {
   path#path30 {
     fill: white;
   }
+
+  @media print {
+    display: none;
+  }
 }

@@ -5,6 +5,7 @@
 @import "header";
 @import "footer";
 @import "post";
+@import "page";
 @import "index";
 @import "audio";
 @import "blog";
@@ -53,6 +54,7 @@ h1 {
 p {
   overflow-x: scroll;
   overflow-y: hidden;
+  page-break-inside: avoid;
 }
 
 a {
@@ -74,6 +76,7 @@ img {
   text-align: center;
   border: 1vh solid $light-gray;
   max-width: 100%;
+  page-break-inside: avoid;
 }
 
 blockquote {
@@ -98,6 +101,7 @@ figure.highlight {
   border-width: 0 1vh 0 1vh;
   font-family: 'Fira Mono', monospace; 
   font-weight: 100;
+  page-break-inside: avoid;
 }
 
 ul {
@@ -127,4 +131,11 @@ hr {
   visibility: hidden;
   height: 0;
   clear: both;
+}
+
+@media print {
+  body > div {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

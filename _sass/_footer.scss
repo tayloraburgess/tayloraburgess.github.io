@@ -22,4 +22,8 @@ footer {
   @media (max-width: $medium) and (max-height: $small) {
     height: 8vh;
   }
+
+  @media print {
+    display: none;
+  }
 }
