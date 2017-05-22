@@ -12,4 +12,9 @@
       display: block;
     }
   }
+  @media print {
+    .tag-or-year + ul {
+      display: block;
+    }
+  }
 }

@@ -2,10 +2,21 @@
   position: relative;
 
   > div {
-    margin-top: 40px;
+    margin-top: 55px;
+    page-break-inside: avoid;
+
+    &:first-child::before {
+      content: 'tayloraburgess@gmail.com | 8505594026';
+      font-family: 'Fira Mono', monospace;
+      display: block;
+      position: absolute;
+      top: -48px;
+      font-size: 13.28px;
+      padding-left: 13px;
+    }
 
     > div {
-      page-break-inside: avoid;
+      padding-left: 13px;
 
       &:last-child {
         margin-bottom: 40px;
@@ -48,16 +59,11 @@
 
   @media print {
     h2 {
-      border-bottom: 2px solid $light-gray;
+      border-bottom: 0.5vh solid $light-gray;
     }
 
     > div:first-child::before {
       content: 'tayloraburgess@gmail.com | tayloraburgess.github.io | 8505594026';
-      font-family: 'Fira Mono', monospace;
-      display: block;
-      position: absolute;
-      font-size: 13.28px;
-      top: -33px;
     }
   }
 }
