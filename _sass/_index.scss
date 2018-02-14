@@ -4,6 +4,10 @@
     margin-top: 4vh;
     border-top: 1vh solid $light-gray;
     padding-top: 4vh;
+
+    &.no-border {
+      border-top: none;
+    } 
   }
 
   .intro {
