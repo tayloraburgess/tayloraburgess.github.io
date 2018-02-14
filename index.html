@@ -6,8 +6,8 @@ permalink: /
 <div class='index'>
   <div class='clearfix'>
     <div class='intro'>
-      <p>I'm Taylor Burgess, and I'm a software engineer, currently at <a href='https://clarifai.com/'>Clarifai</a>. I primarily work on the web front-end, but I'm curious about all kinds of programming problems!</p>
-      <p>I also <a href='/blog'>write</a> things and sometimes <a href='/audio'>record</a> music.</p>
+      <p>I'm Taylor Burgess, and I'm a software engineer, currently at <a href='https://clarifai.com/'>Clarifai</a></p>
+      <p>I also <a href='/blog'>write things</a> sometimes.</p>
       <p>Feel free to <a href='mailto:tayloraburges@gmail.com'>say hello</a>.</p>
     </div>
     <div class='image-container'>
@@ -19,6 +19,6 @@ permalink: /
   <h5>{{ site.posts[0].date | date: "%b %-d, %Y" }}</h5>
   <div>
     {{ site.posts[0].excerpt }}
+    <h4><a href='{{ site.posts[0].url | prepend: site.baseurl | prepend: site.url }}'>Read More</a></h4>
   </div>
-  <h4><a href='{{ site.posts[0].url | prepend: site.baseurl | prepend: site.url }}'>Read More</a></h4>
 </div>
