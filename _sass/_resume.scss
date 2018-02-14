@@ -1,9 +1,12 @@
 .resume {
   position: relative;
 
+  ul {
+    margin: 0;
+  }
+
   > div {
     margin-top: 55px;
-    page-break-inside: avoid;
 
     &:first-child::before {
       content: 'tayloraburgess@gmail.com | 8505594026';
@@ -17,12 +20,13 @@
 
     > div {
       padding-left: 13px;
+      page-break-inside: avoid;
 
       &:last-child {
         margin-bottom: 40px;
       }
 
-      :last-child {
+      p:last-child {
         margin-bottom: 25px;
       }
     }
