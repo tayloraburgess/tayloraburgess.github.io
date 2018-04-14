@@ -1,24 +1,32 @@
----
-layout: page
-title: Hi!
-permalink: /
----
-<div class='index'>
-  <div class='clearfix'>
-    <div class='intro'>
-      <p>I'm Taylor Burgess, and I'm a software engineer, currently at <a href='https://clarifai.com/'>Clarifai</a>.</p>
-      <p>I also <a href='/blog'>write things</a> sometimes.</p>
-      <p>Feel free to <a href='mailto:tayloraburges@gmail.com'>say hello</a>!</p>
-    </div>
-    <div class='image-container'>
-      <img src='assets/photo.jpg'></img>
-    </div>
-  </div>
-  <h4>Latest Blog Post:</h4>
-  <h3>{{ site.posts[0].title }}</a></h3>
-  <h5>{{ site.posts[0].date | date: "%b %-d, %Y" }}</h5>
-  <div>
-    {{ site.posts[0].excerpt }}
-    <h4 class='no-border'><a href='{{ site.posts[0].url | prepend: site.baseurl | prepend: site.url }}'>Read More</a></h4>
-  </div>
-</div>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, height=device-height, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Slab:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+    <title>Taylor Burgess</title>
+  </head>
+  <body>
+    <header>
+      <h1>Taylor Burgess</h1>
+      <nav>
+        <p class="half-margin"><a href="/about">About</a></p>
+        <p class="half-margin"><a href="/blog">Blog</a></p>
+        <p class="half-margin"><a href="/resume">Resume</a></p>
+      </nav>
+    </header>
+    <section>
+      <h2>Most recent blog post:</h2>
+      <h2><a href="/blog/2017-04-22-macos-vi">vi Keybindings in macOS with Karabiner & Hammerspoon</a></h2>
+      <p>
+      I switched to Vim as my primary programming text editor about six months ago. While I'm really not very good with it yet--part of the attraction was the steep learning curve; I could still be training myself to use it more effectively years from now--I grew accustomed to it quickly enough that I wanted to use vi keybindings everywhere else in my OS (currently macOS). 
+      </p>
+      <p>
+      So I decided to figure out a way to make this happen and, at least for now, narrowed the scope to creating a key binding that would switch the OS to another 'mode' where I could then work with text using very basic vi normal mode controls. The 'default' OS mode would then become the equivalent of vi's insert mode. 
+      </p>
+      <p class="sans-serif"><a href='/blog/2017-04-22-macos-vi'>Keep reading</a></a>
+    </section>
+  </body>
+</html>
