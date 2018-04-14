@@ -15,6 +15,7 @@ body {
 
 h1, h2, h3, .sans-serif {
   font-family: 'Lato', sans-serif; 
+  font-weight: 300;
   letter-spacing: .09rem;
 }
 
@@ -34,8 +35,20 @@ h3, .sans-serif {
   font-size: 1.1rem;
 }
 
-h2, h3, .sans-serif, p {
+h2, h3, p, pre {
   margin: .75rem 0;
+}
+
+pre {
+  overflow-x: scroll;
+  background-color: #dedede;
+  padding: 1rem;
+  font-size: .9rem;
+}
+
+code {
+  font-family: 'Fira Mono', monospace; 
+  font-weight: 400;
 }
 
 .half-margin {
@@ -44,6 +57,7 @@ h2, h3, .sans-serif, p {
 
 p, ul {
   font-family: 'Roboto Slab', serif; 
+  font-weight: 300;
   font-size: .9rem;
   letter-spacing: .08rem;
   line-height: 1.5rem;
@@ -54,9 +68,13 @@ a {
   text-decoration: none;
 }
 
-
 a:visited {
   color: #5c749c;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 section, header {
@@ -97,4 +115,9 @@ header + * {
   h1, break {
     box-shadow: none;
   }
+  
+  h1, h2, h3, pre, p, li {
+    page-break-inside: avoid;
+  }
+
 }

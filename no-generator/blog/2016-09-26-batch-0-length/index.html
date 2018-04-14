@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, height=device-height, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Slab:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+    <title>batch[0][batch[0].length - 1] (RC 26 July-22 September)</title>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>batch[0][batch[0].length - 1] (RC 26 July-22 September)</h1>
+        <h3><time>2016-09-26</time></h3>
+      </header>
+      <section class="break">
+        <p>I get out of bed at 7:00 AM today. This is atypical for me. Usually I can sleep through the sound of the construction workers outside my window, smashing steel bars together toward whatever end, but today I can't.</p>
+        <p>I decide that I'm going to be productive today, productive like I've been for the past three months. While I'm in the shower, I write a mental checklist of things to do.</p>
+        <p>I make oatmeal. I put on a sweater. I sit down at the table and open my laptop and discover that unplugging the router last night to make room for a box fan has somehow irreparably disabled the internet, so I spend 30 minutes unsuccessfully trying to debug it, while also not waking up my roommates, whose heads are just a few feet away from the modem.</p>
+        <p>This all has the flavor of a return to reality, and I don't particularly like it.</p>
+      </section>
+      <section class="break"> 
+        <p>If, for whatever reason, you've watched this space recently, you'll notice that I made some semi-public commitments to making regular blog posts while in-batch at the Recurse Center. You'll also notice that I only made 9 posts, not counting this one, all within the first month, and then radio silence.</p>
+        <p>Let the record show: this is not a negative reflection on RC or the people who are a part of it. If anything, the opposite is true: I became so joyously caught up in the details of programming and the day-to-day of existing in the community that I frankly just couldn't find the time or spare scraps of mental energy to put down coherent thoughts every day. There's plenty to be said, of course,  for forcing yourself to get out at least a few words on schedule, but I just gave it up and didn't look back.</p>
+        <p>So, to catch up, a quick summary of things I ultimately (or at least partially) accomplished or contributed to at RC, in no particular order:</p>
+        <ul>
+          <li><a href="https://github.com/tayloraburgess/fielding-chat">fielding-chat</a>, a small RESTful API server that provides the basic infrastructure for a stream-based, group-message chat system, using Node &amp; Express. Also my first project working entirely in ES6 (transpiled with Babel).</li>
+          <li><a href="https://github.com/leeorb321/expenses">expenses</a>, a web app for tracking personal finances and visualizing the resulting data, built using Flask, Postgres, &amp; (relatively) vanilla Javascript in the frontend (with <a href="http://www.chartjs.org/">Chart.js</a> handling the visualizations). This was the project that taught me that trying to create modern, dynamic webpages using only jQuery as an aide is, if not "wrong", at the very least inadvisably difficult, as is managing state via the contents of DOM nodes. Paired on this with Leeor.</li>
+          <li><a href="https://github.com/mjec/rc-niceties">rc-niceties</a>, a system for (hopefully) reliably allowing Recursers to write and send nice notes to other Recursers at the end of their batch. Backend in Flask &amp; Postgres, frontend in React. My first experience with determining when a build is just reliable enough to go live, and then deciding it's actually not reliable enough, and then agonizing over how and when to push updates without breaking the user experience. A nice welcome to the rest of my life, I suppose. Paired on this with Kang Ren.</li>
+          <li><a href="https://github.com/tayloraburgess/markdown-preview">markdown-preview</a>, a parser/interpreter/compiler for, well, Markdown, loosely written in Node. Debatable whether this one is an accomplishment (yet), as in its current refactor stage, it's largely unusable and broken--but I feel comfortable putting it in this list due to the multiple evolutions it has undergone as I've learned more about Javascript specifically and programming generally. It's also the project I came into Recurse with, intending to finish it within a week or two, and which has now outlasted everything else I've worked on. So, to kill this white whale, I'm working on a clean final version based on the <a href="http://spec.commonmark.org/0.26/#appendix-a-parsing-strategy">CommonMark spec's parsing guidelines</a>, which I'll modularize (and hopefully submit to npm), use as the base for a quick React app for demo purposes, and maybe also spin off as a command line utility.</li>
+          <li><a href="https://github.com/elenacaseyroby/YoutubeMusicLib">YoutubeMusicLib</a>, an app that tracks a user's music listening habits on YouTube and makes recommendations using the collected data. Built with MySQL, Flask, and, again, relatively plain Javascript in the frontend. Spent a lot of time fiddling with OAuth here. Paired on this with Casey &amp; Arpith.</li>
+          <li><a href="https://github.com/lamarqua/Woog">Woog</a>, a framework-less modular synthesizer written in Javascript, relying heavily on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Web Audio API</a>. This project is still a work-in-progress, as it's hardcoded to the MIDI device we tested it with, but does have support for filters, polyphony, and several other parameter-controlled effects. Paired on this with Adrien.</li>
+          <li><a href="https://github.com/JKiely/Totes-Random">Totes-Random</a>, a pseudorandom number generator built with Haskell in the backend and plain Javascript in the frontend--additionally, as Haskell's web framework selection is unsurprisingly paltry and poorly documented, we built an additional Flask server to host the main page (that's in a separate repo <a href="https://github.com/tayloraburgess/totes-desperate">here</a>). The app pulls "atmospheric data" from Twitter streams containing certain keywords and generates a pseudorandom number after a few mutations. Paired on this with John &amp; Sean.</li>
+          <li><a href="https://github.com/JesseRap/RoboDJ">RoboDJ</a>, a Node app that analyzes audio tracks, looking for peaks, BPM, and section breaks, and lets the user mix &amp; auto-crossfade between them. Also, experimentally, uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a> (browser-based multithreading in Javascript) to render the interface and do audio analysis concurrently in a more timely manner. Paired on this with Jesse &amp; Jake.</li>
+        </ul>
+        <p>This, of course, doesn't implicitly include countless warmup problems, quick exercises, workshops, books, meditation sessions, presentations, friends, dumplings, beers, cups of coffee, and late nights spent staring at monitors.</p>
+      </section>
+      <section class="break">
+        <p>In the first post in this series (if you can call it that), I gave myself permission to emote a little more freely than I usually do on the internet, so I'll do that one last time:</p>
+        <p>Without going into too much detail, I discovered the Recurse Center during what was, to date, one of the darkest periods of my life--personally, emotionally, intellectually, professionally. And while I won't solely credit my time here with helping me begin to straighten things out--therapy, friends, family, and just plain willpower have mostly done that--I can't help but describe, maybe tritely, the experience as something akin to seeing sunlight again after an interminable stretch spent stumbling around in a pitch-black cave, half-heartedly feeling the walls, and not even being sure if I actually wanted to see sunlight again.</p>
+        <p>This is not to oversell RC as some sort of magical, restorative utopia, but simply as a place where very good-hearted people gather to work on projects that interest them, learn whatever programming-related topics they feel like learning, and treat each other with immense respect and dignity. Seeing that in motion, in reality, and being granted the honor to participate, was enough to lift me off of the ground.</p>
+      </section>
+      <section class="break">
+        <p>I put on some coffee, as my non-habitual early waking time means that by 10:00 AM, I'm already dragging a bit. I start to wonder if this is a sign that I won't be able to keep up the relatively intense pace I maintained while I was at RC--or that without the structure around me, I'll lack the motivation to do anything meaningful. Or that maybe that pace is unhealthy, and I should develop better work habits.</p>
+        <p>I fold up my bed. I wash some dishes. I start to get that taste again of things returning to normal after a long vacation or escape, and normal is not a state of being I have an especially comfortable relationship with right now. The typical slew of worries start: that the title of this blog post is stupid, that blogging is stupid, that I'm a stupid programmer, that programming is stupid.</p>
+        <p>And then I try to get some distance, and consider another perspective, and remind myself of what I talked with others in my batch about many times: that the whole experiment of the Recurse Center is arbitrary, is artificial, is a social and intellectual construction sustained solely by the active participation of the members of an ad-hoc community. Whatever was driving me to build and learn during the past three months is still there if I want it to be because it was entirely in my head to begin with.</p>
+        <p>I think this is a good place to start from.</p>
+        <p>(Some final) stray thoughts:</p>
+        <ul>
+          <li>Though my presentation of it has probably been a bit scattershot, and my singular experience doesn't necessarily do the entire thing justice, if anything I've written seems to ring true and you're interested in becoming a better programmer, strongly consider <a href="https://www.recurse.com/apply">applying</a> to the Recurse Center. I'm also happy to talk about it at length; if you want, contact me via whatever medium works best for you.</li>
+          <li>In the event that anyone actually reads this and is planning to do a batch at Recurse, or just might be in the SoHo area, the one piece of very practical advise I can give is to try as many local restaurants, bars, coffee shops, food stands, etc as you can reasonably afford, as there are so many fantastic choices within walking distance that it's kind of overwhelming. Here are some that I consistently went back to (and many other Recursers did as well); there's far too many to write descriptions for, so just going to list:
+            <ul>
+              <li>Lunch
+                <ul>
+                  <li>Bahn Mi Saigon</li>
+                  <li>The #1 SoHo Halal Guy (cart on Houston &amp; Broadway)</li>
+                  <li>Simple</li>
+                  <li>Vanessa's Dumpling House</li>
+                  <li>Hoomos Asli</li>
+                  <li>Wah Fung</li>
+                  <li>Xi'an Famous Foods (Kenmare &amp; Mott location)</li>
+                  <li>Taim (Spring &amp; Mulberry location)</li>
+                  <li>Landmark Cafe</li>
+                  <li>Hampton Chutney Co</li>
+                  <li>Lahore Deli</li>
+                </ul>
+              </li>
+              <li>Coffee
+                <ul>
+                  <li>Happy Bones</li>
+                  <li>Gasoline Alley (Grand &amp; Lafayette location)</li>
+                  <li>Saturdays Surf</li>
+                  <li>Maman</li>
+                  <li>Greecologies</li>
+                  <li>Housing Works Bookstore Café</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </article>
+    <footer>
+      <p class="half-margin"><a href="/blog/2016-10-11-learning-things">Next: A Note On Learning Things</a></p>
+      <p class="half-margin"><a href="/blog/2016-07-25-list">Previous: List (RC 20-25 July)</a></p>
+      <p class="half-margin"><a href="/blog">Archive</a></p>
+      <p class="half-margin"><a href="/about">About</a></p>
+    </footer>
+  </body>
+</html>
