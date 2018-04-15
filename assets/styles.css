@@ -24,7 +24,7 @@ h1 {
 }
 
 h1, .break {
-  box-shadow: inset 0rem -0.12rem #dedede;
+  box-shadow: inset 0rem -0.12rem 0 0 #dedede;
 }
 
 h2 {
@@ -64,12 +64,12 @@ p, ul {
 }
 
 a {
-  color: #5c749c;
+  color: #5d92ea;
   text-decoration: none;
 }
 
 a:visited {
-  color: #5c749c;
+  color: #5d92ea;
 }
 
 img {
