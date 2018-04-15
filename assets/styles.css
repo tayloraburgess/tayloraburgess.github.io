@@ -112,7 +112,7 @@ header + * {
     color: black;
   }
 
-  h1, break {
+  h1, .break {
     box-shadow: none;
   }
   
