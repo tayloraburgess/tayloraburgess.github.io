@@ -35,7 +35,7 @@ h3, .sans-serif {
   font-size: 1.1rem;
 }
 
-h2, h3, p, pre {
+h2, h3, p, pre, ul {
   margin: .75rem 0;
 }
 
@@ -63,6 +63,15 @@ p, ul {
   line-height: 1.5rem;
 }
 
+ul ul {
+  margin: 0;
+}
+
+nav ul, footer ul {
+  list-style: none;
+  padding: 0;
+}
+
 a {
   color: #5d92ea;
   text-decoration: none;
@@ -79,6 +88,10 @@ img {
 
 section, header {
   padding: 0 0 1rem;
+}
+
+.section-padding {
+  padding-bottom: 1.75rem;
 }
 
 header > h1:first-child, section > h1:first-child {
