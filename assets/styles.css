@@ -132,5 +132,4 @@ header + * {
   h1, h2, h3, pre, p, li {
     page-break-inside: avoid;
   }
-
 }
