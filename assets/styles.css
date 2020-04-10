@@ -114,22 +114,3 @@ header + * {
     padding: 1.5rem;
   }
 }
-
-@media print {
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  body, a, a:visited {
-    color: black;
-  }
-
-  h1, .break {
-    box-shadow: none;
-  }
-  
-  h1, h2, h3, pre, p, li {
-    page-break-inside: avoid;
-  }
-}
