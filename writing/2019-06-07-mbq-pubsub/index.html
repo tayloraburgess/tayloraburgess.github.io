@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, height=device-height, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato:300|Roboto+Slab:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS">
+    <title>Understanding message queues with mbq.pubsub</title>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>Understanding message queues with mbq.pubsub</h1>
+        <h3><time>2019-06-07</time></h3>
+      </header>
+      <p><em>This is a crosspost from my employer Managed by Q's blog <a href="https://medium.com/do-not-erase/understanding-message-queues-with-mbq-pubsub-5961ae5f2280">Do Not Erase</a></em></p>
+      <p>If you develop software, there's a good chance you're familiar with test-driven development (whether you practice it or not): write your tests first, confirm that they fail, write your initial code, and iterate until your tests no longer fail.</p>
+      <p>While TDD is common, test coverage only guarantees so much. When a system is actually running in production--especially over a distributed network--there are countless ways it can fail unexpectedly.</p>
+      <p>Much like writing tests, we can try to pre-empt and understand those failures, as well as other types of behavior we can't predict, with monitoring and other runtime tools.</p>
+      <p>However, you probably wouldn't write a unit test that, for example, asserts that a function gives you any output at all: you test that specific inputs produce specific outputs. Similarly, there is no one-size-fits-all approach to understanding running systems: you write tools tailored to the specific problem you intend your system to solve. Again, in the spirit of TDD, this is often easier to do you if design these tools alongside or prior to your code.</p>
+      <p class="section-padding">At Managed by Q, we built a Python library, <a href="https://github.com/managedbyq/mbq.pubsub">mbq.pubsub</a>, to solve particular problems for our engineers, and the way we understand the health and working state of mbq.pubsub is closely tied to its purpose and how that purpose supplements our other systems.</p>
+      <section>
+        <h2>Problems</h2>
+        <p>At Managed by Q, our backends are comprised of several discrete services that communicate with each other asynchronously using a publisher/subscriber pattern via AWS SNS (Simple Notification Service) and SQS (Simple Queue Service). In this pattern, publisher services publish messages to an SNS topic. All SQS queues which are subscribed to an SNS topic receive the topic's messages, and the subscriber service associated with each SQS queue can then read those messages.</p>
+        <p>While SNS and SQS meet our needs--and are quite reliable--their APIs (which we request via the Python <a href="https://pypi.org/project/boto3/">boto3 package</a>) leave a number of implementation details up to us. We can easily receive messages from an SQS queue, but how do we design a consumer process to receive and process those messages? After a certain number of failed delivery attempts, SQS moves messages to a dead letter queue, but what do we do with the messages then?</p>
+        <p>To answer these and other questions, we organically developed light publisher/subscriber modules in each of our services, but without a coordinated plan. We ended up with duplicated code with service-specific adjustments. If you were spinning up a new service, the repeated advice was to copy queue-related code out of the repository with the most recent changes--not so ideal.</p>
+        <p>This accidental design was, in some ways, helpful. We could safely and quickly make changes to each service's publisher or consumer implementation without site-wide ramifications. If you were reading a service's code for the first time, understanding how queues integrated into the service was straightforward.</p>
+        <p>Critically, though, we couldn't easily understand how our publishers/consumers were operating across all of our systems. We couldn't consistently detect or address failure: some services exposed metrics that we could monitor, and others didn't. Rolling out changes to address these deficiencies was tedious and time-consuming.</p>
+      </section>
+      <section>
+        <h2>mbq.pubsub</h2>
+        <p>We designed mbq.pubsub as a general but opinionated set of SNS/SQS tools Managed by Q engineers can install with minimal effort in services they maintain, and encouraged engineers to replace all old, fragmented queue code with it.</p>
+        <p>This makes mbq.pubsub more of a black box to most of our engineers than previous service-specific publisher/subscriber implementations--using it in a Django-based service doesn't require much beyond <a href="https://github.com/managedbyq/mbq.pubsub#configuration">declaring a function handler per message type</a>. Even if they're not spending much time in mbq.pubsub's internals, our engineers still need to know that their service's consumers and publishers are healthy, and get insights into queue operations when necessary. We designed mbq.pubsub with these needs in mind from the start.</p>
+      </section>
+      <section>
+        <h2>Dead Letter Queues</h2>
+        <p>A common issue our engineers encountered involved SQS messages that failed to deliver to their service, either because of an error in the handler code processing the message, or something more systemic. SQS does some of the work for us by pushing undeliverable messages onto an associated dead letter queue (DLQ). But it was still frustratingly difficult to understand if a problem causing messages to end up in that DLQ was transient, allowing us to safely replay the messages, or a signal of something broader or more urgent.</p>
+        <p>We addressed this with a custom DLQ implementation that layers on top of, but still relies on, AWS's DLQs:</p>
+        <p><img src="/writing/2019-06-07-mbq-pubsub/dlq.png" alt="Diagram representing mbq.pubsub's DLQ infrastructure" /></p>
+        <p>In services that use it, mbq.pubsub provisions an "undeliverable message" table in the service's database. It then runs a continuous consumer process that receives messages from the service's dead letter queue and inserts the complete message payload, along with relevant metadata, into the "undeliverable message" table.</p>
+        <p>We now have complete control over DLQ messages within the service. We can replicate and delete messages, replay them back to the primary SQS queue, and (most importantly) understand why they ended up in the DLQ in the first place.</p>
+        <p>To consolidate what mbq.pubsub knows about a given DLQ message into one place for our engineers, we built a browser-based interface using <a href="https://docs.djangoproject.com/en/2.2/ref/contrib/admin">Django's admin API</a> (a low-overhead way to build internal web tools, which we use frequently at Managed by Q):</p>
+        <p><img src="/writing/2019-06-07-mbq-pubsub/admin.png" alt="mbq.pubsub's DLQ web interface" /></p>
+        <p>This interface gives engineers quick access to basic information about the message, like its full payload, what topic published it, and the queue that attempted to deliver it. For deeper visibility into the message, and to give engineers more context as they work to fix the problem, mbq.pubsub also attempts to generate URL queries that take engineers directly to the point of failure in our system logs, streamed in <a href="https://papertrailapp.com">Papertrail</a>, and the server-side exception, tracked in <a href="https://rollbar.com">Rollbar</a> (as SQS doesn't capture any exception or general failure information when moving messages to its DLQ).</p>
+        <p>Equipped with these insights, our engineers can decide what to do next.</p>
+      </section>
+      <section>
+        <h2>Metrics</h2>
+        <p>Our previous publisher/subscriber implementations tended to either collect little to no monitorable metrics about their operation, or so many that it became difficult to sift for actionable or interesting data. In mbq.pubsub, we tightened our metrics collection around two poles that give us visibility into mbq.pubsub's specific use in our systems: simple data about the message types we're publishing, and more in-depth data about the chronological lifecycle of messages as they travel through our systems.</p>
+        <p>For every message we publish with mbq.pubsub, we collect metrics that identify the type of the message: the service that created it, the data type of the payload, and the SNS topic to which we're publishing it. On the consumer side, we collect similar data, as well as whether the message was processed successfully. This gives us the flexibility to alert engineers on elevated message delivery failures or other unusual trends via our monitoring service, Datadog, as well as visualize the general status of our publishers/subscribers:</p>
+        <p><img src="/writing/2019-06-07-mbq-pubsub/dashboard.png" alt="Dashboard of mbq.pubsub metrics in Datadog" /></p>
+        <p>From this dashboard, we can easily see unusual behavior across time in our systems. We also get insights that are not directly related to system failures, like whether we're sending a high volume of messages to our subscribers that they aren't configured to process and accordingly skip--suggesting that maybe we should be more thoughtful about the SNS topics to which we subscribe each SQS queue. If certain types of messages are being published or processed in frequency clusters that we don't expect from our implementation, we'll see that here, too.</p>
+        <p>We supplement these general data metrics with timing information collected from the start of the message's life through when a subscriber finishes processing it:</p>
+        <p><img src="/writing/2019-06-07-mbq-pubsub/metrics.png" alt="Diagram representing when in a message's lifecyle timing metrics are collected" /></p>
+        <p>Detecting latency in our service's use of queues becomes much easier and more granular when we track these metrics. We can determine whether a potential bottleneck is in a place where we'd typically expect it--like a message processing handler function that's taking too long--from the "processed.process_time_ms" metric, or in a more unusual place, like the gap between the time we create and prepare the message with our custom envelope type and the time SNS publishes the message to SQS, which we can derive from the difference between "read.from_envelope_creation_ms" and "read.from_message_creation_ms."</p>
+        <p>mbq.pubsub also attaches each message's identifying metadata to all metrics we collect, so we can combine different metric types for even more specific visibility into a given message type or service (though we're certainly still figuring out the most useful ways to do that).</p>
+      </section>
+      <section class="break">
+        <h2>What's next</h2>
+        <p>I could apply my last thought--that we're still figuring out useful ways to use a particular tool--to the entirety of mbq.pubsub. While we built mbq.pubsub for Managed by Q's specific use cases for message queues, those use cases, and the ways we get visibility into their health and operations, are frequently changing.</p>
+        <p>Now that we have an easy-to-use tool for managing queues, we hope to move more of our service's synchronous and less fault-tolerant HTTP communications with each other to asynchronous messages, which might require more specific data on overall message throughput.</p>
+        <p>We recently added support for Protocol Buffers as a message data format in mbq.pubsub, and as we adopt it more widely, we suspect our engineers will need more insight into schema, type validation, and serialization issues.</p>
+        <p>Many of our services use <a href="http://www.celeryproject.org/">Celery</a> to schedule asynchronous tasks, so we're considering adding first-class support for Celery tasks as subscriber message handlers (currently, scheduling a Celery task from a message requires an intermediate function; we're repeating this pattern across our services, and we're not sure we like it).</p>
+        <p>We're open to suggestions!
+      </section>
+    </article>
+    <footer>
+      <ul>
+        <li class="half-margin"><a href="/">Home</a></li>
+        <li class="half-margin"><a href="/writing">Writing</a></li>
+        <li class="half-margin"><a href="/resume">Resume</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
