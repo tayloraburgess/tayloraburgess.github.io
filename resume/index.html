@@ -1,71 +1,74 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, height=device-height, initial-scale=1'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Slab:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
-    <link rel="stylesheet" type="text/css" href="/assets/print.css">
-    <title>Resume</title>
-    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS">
-  </head>
-  <body>
-    <header>
-      <h1>Taylor Burgess</h1>
-      <p class="half-margin"><a href="mailto:me@tayloraburgess.com">me@tayloraburgess.com</a></p>
-      <p class="half-margin"><a href="https://github.com/tayloraburgess">github.com/tayloraburgess</a></p>
-    </header>
-    <section>
-      <h1>Work</h1>
-      <h2><a href="https://opus.so">Opus</a></h2>
-      <h3 class="half-margin">Senior Software Engineer, June 2020 - Present</h3>
-      <h2><a href="https://managedbyq.com">Managed by Q</a></h2>
-      <h3 class="half-margin">Software Engineer, October 2018 - March 2020</h3>
-      <p>Worked as an infrastructure team individual contributor on internal projects related to privacy, security, &amp; productivity, including:</p>
-      <ul class="two-col">
-        <li><a href="/writing/2019-06-07-mbq-pubsub">A library</a> for subscribing &amp; publishing to asynchronous message queues, allowing engineers to eliminate duplicated, untested code &amp; increase infrastructure observability
-        <li>A system to create support tickets from internal product &amp; maintenance requests, streamlining communication between product/engineering/design/data &amp; the rest of the organization</li>
-        <li>Improvements to the obfuscation of sensitive data in &amp; security of production containers, reducing the possibility of credential theft</li>
-        <li>A service to generate password-less login URLs, allowing users to authenticate from alternative locations like Slack</li>
-        <li>A port of frontends to TypeScript, reducing bug surface area &amp; speeding the development of features</li>
-      </ul>
-      <p class="half-margin"><em>Mostly: Python3, TypeScript, PostgreSQL, Django, Docker, AWS, Jenkins, CircleCI, Convox</em></p>
-      <p class="half-margin"><em>Some: JavaScript, Node.js, React.js, GraphQL, Redux, Webpack</em></p>
-      <h2><a href="https://clarifai.com">Clarifai</a></h2>
-      <h3 class="half-margin">Tech Lead, July 2018 - September 2018</h3>
-      <h3 class="half-margin">Senior Frontend Engineer, October 2017 - September 2018</h3>
-      <h3 class="half-margin">Frontend Engineer, April 2017 - October 2017</h3>
-      <p>Led or contributed to frontend feature projects, including:</p>
-      <ul class="two-col">
-        <li>A from-scratch rewrite of the <a href="https://clarifai.com/developer/account">developer account dashboard</a> to use React.js, Redux, &amp; Webpack; reduce JS bundle size; &amp; launch new developer API keys &amp; billing analytics features</li>
-        <li>A from-scratch rewrite of the <a href="https://clarifai.com/demo">AI model demo application</a> to add SVG data visualizations for video predictions and use a less error-prone Redux-only store structure</li>
-        <li>A Jenkins-based CI/CD system for frontend applications, using compose-able shell scripts &amp; standardized Docker/Node.js environments</li>
-        <li>A monorepo, powered by Lerna &amp; Yarn, for all frontend code, with application generation from archetypes, dependency sharing, &amp; internal JS package distribution</li>
-        <li>A custom Node.js &amp; TypeScript-powered CMS, with React.js-based content templates, a client-side routing system for faster pageloads, &amp; simplified infrastructure management via Kubernetes</li>
-      </ul>
-      <p class="half-margin"><em>Mostly: JavaScript, TypeScript, Bash, Node.js, React.js, Redux, Immutable.js, Webpack, Docker, AWS, Jenkins</em></p>
-      <p class="half-margin"><em>Some: Go, Python2, PostgreSQL, Backbone.js, Gulp, Kubernetes</em></p>
-      <h2>Oxford-Downing LLC Encryption</h2>
-      <h3 class="half-margin">Developer, 2016 - 2017</h3>
-      <p>Encrypted PDF file-sharing app prototype. I refactored a frontend runtime-compiling Python interpreter system for performance &amp; more efficient debugging. I also implemented a custom UI, built a permission layer system, &amp; oversaw a deployment strategy.</p>
-      <h2>Carbon6Rings</h2>
-      <h3 class="half-margin">Developer, 2016 - 2017</h3>
-      <p>Small-business ring vendor, hosted on Shopify. I provided design guidance, optimized script &amp; content delivery, implemented technical improvements to improve conversion rates based on user trends, &amp; wrote custom UI components.</p>
-    </section>
-    <section>
-      <h1>Education</h1>
-      <h2><a href="https://recurse.com">Recurse Center</a></h2>
-      <h3 class="half-margin">Participant, 2016</h3>
-      <p>12-week educational retreat for programmers from around the world. I worked on a number of projects that would help me grow as a programmer, mostly while pairing, across multiple languages &amp; platforms. A few examples:</p>
-      <ul>
-        <li>A browser-based modular synthesizer built on the Web Audio API</li>
-        <li>A pseudorandom generator written in Haskell, using the Twitter API as an entropy source</li>
-        <li>A full-stack internal web tool for the Recurse Center, built with Flask, PostgreSQL, &amp; React.js</li>
-      </ul>
-      <h2>Samford University</h2>
-      <h3 class="half-margin">Undergrad Student, 2010 - 2014</h3>
-      <p>B.A. English (Creative Writing); Summa Cum Laude</p>
-    </section>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name='viewport' content='width=device-width, height=device-height, initial-scale=1'>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+<style>
+body {
+padding: 100px;
+font-family: monospace;
+max-width: 700px;
+}
+</style>
+<title>resume</title>
+</head>
+<body>
+<header>
+<h1>Taylor Burgess</h1>
+<p><a href="mailto:me@tayloraburgess.com">me@tayloraburgess.com</a></p>
+<p><a href="https://github.com/tayloraburgess">github.com/tayloraburgess</a></p>
+</header>
+<section>
+<h1>Work</h1>
+<h2><a href="https://opus.so">Opus</a></h2>
+<h3>Senior Software Engineer, June 2020 - Present</h3>
+<h2><a href="https://managedbyq.com">Managed by Q</a></h2>
+<h3>Software Engineer, October 2018 - March 2020</h3>
+<p>Worked as an infrastructure team individual contributor on internal projects related to privacy, security, &amp; productivity, including:</p>
+<ul>
+<li><a href="/writing/2019-06-07-mbq-pubsub">A library</a> for subscribing &amp; publishing to asynchronous message queues, allowing engineers to eliminate duplicated, untested code &amp; increase infrastructure observability
+<li>A system to create support tickets from internal product &amp; maintenance requests, streamlining communication between product/engineering/design/data &amp; the rest of the organization</li>
+<li>Improvements to the obfuscation of sensitive data in &amp; security of production containers, reducing the possibility of credential theft</li>
+<li>A service to generate password-less login URLs, allowing users to authenticate from alternative locations like Slack</li>
+<li>A port of frontends to TypeScript, reducing bug surface area &amp; speeding the development of features</li>
+</ul>
+<p><em>Mostly: Python3, TypeScript, PostgreSQL, Django, Docker, AWS, Jenkins, CircleCI, Convox</em></p>
+<p><em>Some: JavaScript, Node.js, React.js, GraphQL, Redux, Webpack</em></p>
+<h2><a href="https://clarifai.com">Clarifai</a></h2>
+<h3>Tech Lead, July 2018 - September 2018</h3>
+<h3>Senior Frontend Engineer, October 2017 - September 2018</h3>
+<h3>Frontend Engineer, April 2017 - October 2017</h3>
+<p>Led or contributed to frontend feature projects, including:</p>
+<ul>
+<li>A from-scratch rewrite of the <a href="https://clarifai.com/developer/account">developer account dashboard</a> to use React.js, Redux, &amp; Webpack; reduce JS bundle size; &amp; launch new developer API keys &amp; billing analytics features</li>
+<li>A from-scratch rewrite of the <a href="https://clarifai.com/demo">AI model demo application</a> to add SVG data visualizations for video predictions and use a less error-prone Redux-only store structure</li>
+<li>A Jenkins-based CI/CD system for frontend applications, using compose-able shell scripts &amp; standardized Docker/Node.js environments</li>
+<li>A monorepo, powered by Lerna &amp; Yarn, for all frontend code, with application generation from archetypes, dependency sharing, &amp; internal JS package distribution</li>
+<li>A custom Node.js &amp; TypeScript-powered CMS, with React.js-based content templates, a client-side routing system for faster pageloads, &amp; simplified infrastructure management via Kubernetes</li>
+</ul>
+<p><em>Mostly: JavaScript, TypeScript, Bash, Node.js, React.js, Redux, Immutable.js, Webpack, Docker, AWS, Jenkins</em></p>
+<p><em>Some: Go, Python2, PostgreSQL, Backbone.js, Gulp, Kubernetes</em></p>
+<h2>Oxford-Downing LLC Encryption</h2>
+<h3>Developer, 2016 - 2017</h3>
+<p>Encrypted PDF file-sharing app prototype. I refactored a frontend runtime-compiling Python interpreter system for performance &amp; more efficient debugging. I also implemented a custom UI, built a permission layer system, &amp; oversaw a deployment strategy.</p>
+<h2>Carbon6Rings</h2>
+<h3>Developer, 2016 - 2017</h3>
+<p>Small-business ring vendor, hosted on Shopify. I provided design guidance, optimized script &amp; content delivery, implemented technical improvements to improve conversion rates based on user trends, &amp; wrote custom UI components.</p>
+</section>
+<section>
+<h1>Education</h1>
+<h2><a href="https://recurse.com">Recurse Center</a></h2>
+<h3>Participant, 2016</h3>
+<p>12-week educational retreat for programmers from around the world. I worked on a number of projects that would help me grow as a programmer, mostly while pairing, across multiple languages &amp; platforms. A few examples:</p>
+<ul>
+<li>A browser-based modular synthesizer built on the Web Audio API</li>
+<li>A pseudorandom generator written in Haskell, using the Twitter API as an entropy source</li>
+<li>A full-stack internal web tool for the Recurse Center, built with Flask, PostgreSQL, &amp; React.js</li>
+</ul>
+<h2>Samford University</h2>
+<h3>Undergrad Student, 2010 - 2014</h3>
+<p>B.A. English (Creative Writing); Summa Cum Laude</p>
+</section>
+</body>
 </html>
