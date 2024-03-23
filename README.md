@@ -1,3 +1,3 @@
 # tayloraburgess.github.io
 
-https://tayloraburgess.com
+taylorburgess.net
