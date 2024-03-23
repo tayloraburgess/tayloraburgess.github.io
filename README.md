@@ -1,3 +1,1 @@
-# tayloraburgess.github.io
-
-taylorburgess.net
+It's just HTML
